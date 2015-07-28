@@ -1,0 +1,55 @@
+@main(title = "Home") {
+
+<div class="row">  	  
+        <div class="col-xs-12">
+				<h1>Here you can see all events that are registered in our system</h1>
+			</div>
+</div> 
+   
+<div class="row" >  	  
+        <div class="col-xs-6" >			
+				<h3>Calendar</h3>
+				<div id="calendar"></div>
+			</div>
+		 <div class="col-xs-6">			
+				<h3>Latest Events</h3>
+				<!--<div class="smartmarquee latest-events">-->
+				<div class="latest-events">
+					<ul id="vertical-ticker">
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+						<li>Item 4</li>
+						<li>Item 5</li>
+						<li>Item 6</li>
+					</ul>
+			   </div>
+			</div>
+</div>
+<div class="row">  	  
+        <div class="col-xs-12" id="search-form">
+				<div class="input-group">
+     			 <input type="text" class="form-control" placeholder="Search for...">
+      			<span class="input-group-btn">
+       			 <button class="btn btn-default" type="button">Go!</button>
+      			</span>
+    			</div><!-- /input-group -->
+			</div>
+</div>
+<div class="row">  	  
+        <div class="col-xs-12">			
+				<p>Event Map</p>
+				<div id="map"></div>
+				<script src="@routes.Assets.at("javascripts/my.js")"></script> 
+			</div>
+</div>
+   
+            
+
+      
+
+<!--
+<script type="text/javascript">
+            
+</script>-->
+}
