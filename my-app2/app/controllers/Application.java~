@@ -47,7 +47,8 @@ String username="guest";
     //return ok(views.html.index.render(User.find.byId(request().username())));
     List<User> users = new Model.Finder(String.class, User.class).all();
     //return ok(toJson(users));
-    return ok(views.html.index.render(username);
+    String test = username+" test "+User.find.byId(request().username());
+    return ok(views.html.index.render(username));
   }
   
   public Result services() {
