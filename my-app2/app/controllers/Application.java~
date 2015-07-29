@@ -83,7 +83,7 @@ public class Application extends Controller {
     else 
     {
         session().clear();
-        session("username", loginForm.get().email);
+        session("username", loginForm.get().username);
         return redirect(routes.Application.index());
     }
   	
