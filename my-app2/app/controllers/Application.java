@@ -37,7 +37,8 @@ public class Application extends Controller {
   
   @Security.Authenticated(Secured.class)
   public Result index() {
-    return ok(views.html.index.render());
+    //return ok(views.html.index.render());
+    return ok(views.html.index.render(User.find.byId(request().username())));
   }
   
   public Result services() {
