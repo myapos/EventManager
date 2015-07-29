@@ -84,7 +84,7 @@ public class Application extends Controller {
     {
         session().clear();
         session("email", loginForm.get().email);
-        return redirect(routes.Application.index());
+        return redirect("./index");
     }
   	
   }
@@ -94,7 +94,8 @@ public class Application extends Controller {
   public static class Login {
 
     public String email;
-    public String password;        
+    public String password;
+            
     public String validate() {
         
     if (User.authenticate(email, password) == null) 

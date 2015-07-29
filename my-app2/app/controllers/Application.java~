@@ -37,7 +37,7 @@ public class Application extends Controller {
   
   //@Security.Authenticated(Secured.class)
   public Result index() {
-    return ok(views.html.index.render(null));
+    return ok(views.html.index.render());
   }
   
   public Result services() {
@@ -94,7 +94,8 @@ public class Application extends Controller {
   public static class Login {
 
     public String email;
-    public String password;        
+    public String password;
+            
     public String validate() {
         
     if (User.authenticate(email, password) == null) 
