@@ -110,7 +110,7 @@ $(document).ready(function() {
 
     <div class="row">  	  
         <div class="col-xs-12">
-         Welcome, @user.name <span>(@user.email)</span><a href="@routes.Application.logout()" id="link10">Logout</a>
+      
 				<section class="content">@content</section>
         </div>
     </div>      

@@ -1,6 +1,6 @@
 @(user: User)
 @main(title = "Home") {
-Welcome, @user.name <span>(@user.email)</span><a href="@routes.Application.logout()" id="link10">Logout</a>
+Welcome, @user.name <span>(@user.email)</span><a href="./logout()" id="link10">Logout</a>
 <div class="row">  	  
         <div class="col-xs-12">
 				<h1>Here you can see all events that are registered in our system</h1>
