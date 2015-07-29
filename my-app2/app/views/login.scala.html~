@@ -1,11 +1,12 @@
 @(form: Form[Application.Login])
-@main(title = "Login Page") {
+@main(title = "Login Page", null) {
 
 @helper.form(routes.Application.authenticate) {
    <h1>Sign in</h1>
 
    <p>
-       <input type="email" name="email" placeholder="Email" value="@form("email").value">
+       <!--<input type="email" name="email" placeholder="Email" value="@form("email").value">-->
+       <input type="username" name="username" placeholder="username">
    </p>
    <p>
        <input type="password" name="password" placeholder="Password">

@@ -1,5 +1,5 @@
-@(name: String, null)
-@main(title = "myName") {
+@(name: String)
+@main(title = "myName", null) {
 
 <h1>Home page</h1>
 <p>Hello  @name</p>
