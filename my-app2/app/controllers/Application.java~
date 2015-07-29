@@ -2,6 +2,7 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import play.mvc.Http.*;
 
 import views.html.*;
 
@@ -42,7 +43,7 @@ public class Application extends Controller {
     //System.out.println("user: "+User.find.byId(request().username())+" username: "+User.find.where().eq("username",User.find.byId(request().username())));
     
     //return ok(views.html.index.render(User.find.where().eq("username", User.find.byId(request().username()))));
-    return ok(views.html.index.render(User.find.byId(ctx.session().get("username"))));
+    return ok(views.html.index.render(User.find.byId(Http.Request().username())));
   }
   
   public Result services() {
@@ -89,6 +90,7 @@ public class Application extends Controller {
     {
         session().clear();
         //session("email", loginForm.get().email);
+        
         session("username", loginForm.get().username);
         return redirect(routes.Application.index());
     }

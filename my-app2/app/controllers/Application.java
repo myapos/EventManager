@@ -2,6 +2,7 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import play.mvc.Http.*;
 
 import views.html.*;
 
@@ -89,6 +90,7 @@ public class Application extends Controller {
     {
         session().clear();
         //session("email", loginForm.get().email);
+        
         session("username", loginForm.get().username);
         return redirect(routes.Application.index());
     }
