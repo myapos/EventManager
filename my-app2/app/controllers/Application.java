@@ -47,7 +47,7 @@ String username="guest";
     //return ok(views.html.index.render(User.find.byId(request().username())));
     List<User> users = new Model.Finder(String.class, User.class).all();
     //return ok(toJson(users));
-    String test = username+" test "+User.find.byId(request().username());
+    String test = username+" test "+User.find.where().eq("username", username);
     return ok(views.html.index.render(test));
   }
   
