@@ -6,7 +6,7 @@
 
    <p>
        <!--<input type="email" name="email" placeholder="Email" value="@form("email").value">-->
-       <input type="username" name="username" placeholder="username">
+       <input type="text" name="username" placeholder="username">
    </p>
    <p>
        <input type="password" name="password" placeholder="Password">
