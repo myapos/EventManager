@@ -38,6 +38,7 @@ public class Application extends Controller {
   @Security.Authenticated(Secured.class)
   public Result index() {
     //return ok(views.html.index.render());
+    System.out.println(User.find.byId(request().username()));
     return ok(views.html.index.render(User.find.byId(request().username())));
   }
   
