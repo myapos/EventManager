@@ -20,6 +20,7 @@ import static play.libs.Json.*;
 
 public class Application extends Controller {
 
+String username="guest";
  /*   public Result index() {
         return ok("It works!");
     }
@@ -43,7 +44,8 @@ public class Application extends Controller {
     //System.out.println("user: "+User.find.byId(request().username())+" username: "+User.find.where().eq("username",User.find.byId(request().username())));
     
     //return ok(views.html.index.render(User.find.where().eq("username", User.find.byId(request().username()))));
-    return ok(views.html.index.render(User.find.byId(request().username())));
+    //return ok(views.html.index.render(User.find.byId(request().username())));
+    return ok(toJson(User.find.byId(request().username())));
   }
   
   public Result services() {
@@ -90,7 +92,7 @@ public class Application extends Controller {
     {
         session().clear();
         //session("email", loginForm.get().email);
-        
+        username = loginForm.get().username;
         session("username", loginForm.get().username);
         return redirect(routes.Application.index());
     }
