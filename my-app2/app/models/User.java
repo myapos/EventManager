@@ -21,8 +21,13 @@ public class User extends Model {
 	public String role;
 	
 	public static Model.Finder<String, User> find = new Model.Finder(String.class, User.class);
-
+	
+	public static User authenticate(String username, String password) {
+   return find.where().eq("username", username).eq("password", password).findUnique();
+	}
+/*
 	public static User authenticate(String email, String password) {
    return find.where().eq("email", email).eq("password", password).findUnique();
 	}
+	*/
 }

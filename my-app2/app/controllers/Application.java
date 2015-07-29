@@ -83,7 +83,8 @@ public class Application extends Controller {
     else 
     {
         session().clear();
-        session("email", loginForm.get().email);
+        //session("email", loginForm.get().email);
+        session("username", loginForm.get().username);
         return redirect(routes.Application.index());
     }
   	
@@ -93,12 +94,13 @@ public class Application extends Controller {
   /*inner class*/
   public static class Login {
 
-    public String email;
+    //public String email;
+    public String username;
     public String password;
             
     public String validate() {
         
-    if (User.authenticate(email, password) == null) 
+    if (User.authenticate(username, password) == null) 
     {
       return "Invalid user or password";
     }
