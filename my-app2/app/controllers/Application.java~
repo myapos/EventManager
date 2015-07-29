@@ -100,7 +100,7 @@ public class Application extends Controller {
             
     public String validate() {
         
-    if (User.authenticate(email, password) == null) 
+    if (User.authenticate(username, password) == null) 
     {
       return "Invalid user or password";
     }

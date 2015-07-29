@@ -35,7 +35,7 @@ public class Application extends Controller {
     return ok(views.html.myname.render(name));
   }
   
-  //@Security.Authenticated(Secured.class)
+  @Security.Authenticated(Secured.class)
   public Result index() {
     return ok(views.html.index.render());
   }
