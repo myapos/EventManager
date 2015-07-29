@@ -35,9 +35,9 @@ public class Application extends Controller {
     return ok(views.html.myname.render(name));
   }
   
-  //@Security.Authenticated(Secured.class)
+  @Security.Authenticated(Secured.class)
   public Result index() {
-    return ok(views.html.index.render());
+    return ok(views.html.index.render(User.find.byId(request().username())));
   }
   
   public Result services() {
@@ -49,6 +49,7 @@ public class Application extends Controller {
     return ok(views.html.services.render());
   }
   */
+  
   public Result contact() {
     return ok(views.html.contact.render());
   }
@@ -64,13 +65,13 @@ public class Application extends Controller {
   public Result login() {
     return ok(login.render(Form.form(Login.class)));
   }
-  /*
-  public static Result logout() {
+  /**/
+  public Result logout() {
     session().clear();
     flash("success", "You've been logged out");
     return redirect(routes.Application.login());
   }
-  */
+  
   public Result authenticate() {
   	
   	Form<Login> loginForm = Form.form(Login.class).bindFromRequest();

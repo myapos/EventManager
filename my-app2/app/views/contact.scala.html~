@@ -1,4 +1,4 @@
-@(name: String)
+@(user: User)
 @main(title = "Contact Page") {
 
 <h1>Home page</h1>
