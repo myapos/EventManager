@@ -4,7 +4,7 @@
 
 # Home page
 
-GET     /:user             controllers.Application.index(user)
+GET     /                  controllers.Application.index()
 
 GET     /myName/:name      controllers.Application.myName(name)
 

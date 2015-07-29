@@ -1,12 +1,12 @@
-@(user: User)
-@main(title = "Home", user) {
+@(username: String)
+@main(title = "Home", null) {
 
 <div class="row">  	  
         <div class="col-xs-12">
 				<h1>Here you can see all events that are registered in our system</h1>
 			</div>
 </div> 
-<!--Welcome, @user.username. <a href="@routes.Application.logout()">Logout</a>-->   
+Welcome, @username. <a href="@routes.Application.logout()">Logout</a><!-- -->   
 <div class="row" >  	  
         <div class="col-xs-6" >			
 				<h3>Calendar</h3>
