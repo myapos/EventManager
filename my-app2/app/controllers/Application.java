@@ -39,7 +39,7 @@ public class Application extends Controller {
   public Result index() {
   	
     //return ok(views.html.index.render());
-    System.out.println("user: "+User.find.byId(request().username())+" username: "+User.find.where().eq("username",User.find.byId(request().username())));
+    //System.out.println("user: "+User.find.byId(request().username())+" username: "+User.find.where().eq("username",User.find.byId(request().username())));
     
     //return ok(views.html.index.render(User.find.where().eq("username", User.find.byId(request().username()))));
     return ok(views.html.index.render(User.find.byId(request().username())));
