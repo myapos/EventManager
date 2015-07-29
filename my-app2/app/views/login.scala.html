@@ -5,8 +5,8 @@
    <h1>Sign in</h1>
 
    <p>
-       <!--<input type="email" name="email" placeholder="Email" value="@form("email").value">-->
-       <input type="text" name="username" placeholder="username" value="@form("username").value">
+       <input type="email" name="email" placeholder="Email" value="@form("email").value">
+       <!--<input type="text" name="username" placeholder="username" value="@form("username").value">-->
    </p>
    <p>
        <input type="password" name="password" placeholder="Password">
@@ -19,11 +19,7 @@
         @form.globalError.message
     </p>
 	}
-	@if(flash.contains("success")) {
-    <p class="success">
-        @flash.get("success")
-    </p>
-}
+	
 }
 }
 

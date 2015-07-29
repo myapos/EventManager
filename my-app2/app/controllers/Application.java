@@ -37,7 +37,7 @@ public class Application extends Controller {
   
   //@Security.Authenticated(Secured.class)
   public Result index() {
-    return ok(views.html.index.render(User.find.byId(request().username())));
+    return ok(views.html.index.render());
   }
   
   public Result services() {
@@ -83,7 +83,7 @@ public class Application extends Controller {
     else 
     {
         session().clear();
-        session("username", loginForm.get().username);
+        session("email", loginForm.get().email);
         return redirect(routes.Application.index());
     }
   	
@@ -93,11 +93,11 @@ public class Application extends Controller {
   /*inner class*/
   public static class Login {
 
-    public String username;
+    public String email;
     public String password;        
     public String validate() {
         
-    if (User.authenticate(username, password) == null) 
+    if (User.authenticate(email, password) == null) 
     {
       return "Invalid user or password";
     }
