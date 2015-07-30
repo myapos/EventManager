@@ -122,6 +122,6 @@ color: red;
 text-align: right;
 }	
 
-my-form-container{
+.my-form-container{
 text-align: center;
 }
