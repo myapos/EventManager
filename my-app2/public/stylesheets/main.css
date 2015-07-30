@@ -121,3 +121,7 @@ color: red;
 .welcome-msg{
 text-align: right;
 }	
+
+#login-form{
+text-align: center;
+}

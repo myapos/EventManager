@@ -72,8 +72,8 @@ margin:5px;
 /*text-align: center;*/
 }
 
-h1{
-
+h1,h2,h3{
+text-align: center;
 }
 .calendar-container{
 text-align: center;
@@ -121,3 +121,7 @@ color: red;
 .welcome-msg{
 text-align: right;
 }	
+
+#login-form{
+text-align: center;
+}

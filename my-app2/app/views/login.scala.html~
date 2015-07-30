@@ -1,19 +1,23 @@
 @(form: Form[Application.Login])
 @main(title = "Login Page", null) {
 
-@helper.form(routes.Application.authenticate) {
-   <h1>Sign in</h1>
+@helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "login-form") {
+   <h1>Please sign in</h1>
 
-   <p>
+  
         <!--<input type="email" name="email" placeholder="Email" value="@form("email").value">-->
-      <input type="text" name="username" placeholder="username" value="@form("username").value">
-   </p>
-   <p>
-       <input type="password" name="password" placeholder="Password">
-   </p>
-   <p>
-       <button type="submit">Login</button>
-   </p>
+      <div class="form-group">
+    		<label for="username">Username:</label>
+      	<input type="text" name="username" id="username" placeholder="username" value="@form("username").value">
+      </div>
+  
+   	<div class="form-group">
+    		<label for="password">Password:</label>
+      	<input type="password" name="password" id="password" placeholder="Password">
+      </div>
+   
+       <button type="submit" class="btn btn-default">Login</button>
+ 
    @if(form.hasGlobalErrors) {
     <p class="error">
         @form.globalError.message
