@@ -72,6 +72,9 @@ margin:5px;
 /*text-align: center;*/
 }
 
+h1{
+
+}
 .calendar-container{
 text-align: center;
 }
@@ -85,7 +88,7 @@ margin-top:10px;
 margin-bottom: 10px;
 }
 #map { 
-
+text-align: center;
 height: 300px; 
 
 }
@@ -116,5 +119,5 @@ color: red;
 }
 
 .welcome-msg{
-text-align: left;
+text-align: right;
 }	
