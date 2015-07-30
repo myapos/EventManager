@@ -48,6 +48,7 @@ String username="guest";
     //List<User> users = new Model.Finder(String.class, User.class).all();
     //return ok(toJson(users));
     User usr =User.find.where().eq("username", username).findUnique();
+   
     //String test = username+" test role:"+usr.role;
     return ok(views.html.index.render(usr.username,usr.role));
     //return ok(views.html.index.render());
@@ -86,6 +87,7 @@ String username="guest";
   public Result logout() {
     session().clear();
     flash("success", "You've been logged out");
+    username="guest";
     return redirect(routes.Application.login());
   }
   
