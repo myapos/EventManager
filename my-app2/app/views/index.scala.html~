@@ -1,8 +1,8 @@
 @(username: String, role:String)
 @main(title = "Home", null) {
 
-<div class="row" class="welcome-msg">  	  
-  <div class="col-xs-12">
+ 	  
+<div class="col-xs-12 welcome-msg">
         
       @role match {   
  		case "user" => {
@@ -10,6 +10,7 @@
   		}
   		case "admin" => {
   		  Welcome, @username. Currently you are logged in as @role. <a href="@routes.Application.logout()">Logout</a>
+  		  You can visit admin area in this link <a href="@routes.Application.admin()">Admin area</a>. 
   		}
   		case "" => {
   		  Welcome guest.
@@ -17,7 +18,6 @@
 }		
 </div>
 
-</div>
 <div class="row">  	  
         <div class="col-xs-12">
 				<h1>Here you can see all events that are registered in our system</h1>			
