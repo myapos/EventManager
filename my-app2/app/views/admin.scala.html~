@@ -20,8 +20,8 @@
 
 <div class="my-form-container">
 @helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "location-form") {
-<p>Please fill in location form</p>
-   <h1>Location</h1>
+<p></p>
+   <h3>Location-Please fill in location form</h3>
   
       <div class="form-group">
     		<label for="name">Name:</label>
@@ -48,8 +48,8 @@
 
 <div class="my-form-container">
 @helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "event-form") {
-<p>Please fill in event form</p>
-   <h1>Event</h1>
+<p>/p>
+   <h3>Event - Please fill in event form<</h3>
       <div class="form-group">
     		<label for="description">Description:</label>
     		<textarea class="form-control" name="description" id="description" placeholder="description" rows="10" cols="70"></textarea>

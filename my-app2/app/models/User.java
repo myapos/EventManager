@@ -20,6 +20,16 @@ public class User extends Model {
 	
 	public String role;
 	
+	public User(String name, String username, String email, String password, String role){
+	
+	this.name=name;
+	this.username=username;
+	this.email=email;
+	this.password=password;
+	this.role=role;
+	
+	}
+	
 	public static Model.Finder<String, User> find = new Model.Finder(String.class, User.class);
 	
 	public static User authenticate(String username, String password) {

@@ -1,4 +1,4 @@
-@(username: String, role:String)
+@(form: Form[Application.RegisterUser], username: String, role:String)
 @main(title = "Register Page", null) {
 <div class="col-xs-12 welcome-msg">
         
@@ -19,9 +19,9 @@
 <h1>Home page</h1>
 <p>Hello  from Register Page</p>
 <div class="my-form-container">
-@helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "register-form") {
-<p>Please fill in register form</p>
-   <h3>Location</h3>
+@helper.form(routes.Application.registeruser, 'role -> "form", 'id -> "register-form") {
+<p></p>
+   <h3>Register - Please fill in register form</h3>
   
       <div class="form-group">
     		<label for="name">Name:</label>
@@ -32,7 +32,7 @@
       	<input type="text" class="form-control" name="username" id="username" placeholder="username">
       </div>
       <div class="form-group">
-    		<label for="email">Latitude:</label>
+    		<label for="email">Email:</label>
       	<input type="email" class="form-control" name="email" id="email" placeholder="email">
       </div>
       <div class="form-group">

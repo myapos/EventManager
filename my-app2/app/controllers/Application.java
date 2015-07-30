@@ -20,7 +20,7 @@ import static play.libs.Json.*;
 
 public class Application extends Controller {
 
-String username="guest";
+String globalusername="guest";
  /*   public Result index() {
         return ok("It works!");
     }
@@ -47,7 +47,7 @@ String username="guest";
     //return ok(views.html.index.render(User.find.byId(request().username())));
     //List<User> users = new Model.Finder(String.class, User.class).all();
     //return ok(toJson(users));
-    User usr =User.find.where().eq("username", username).findUnique();
+    User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){
    return ok(views.html.index.render("",""));
@@ -72,7 +72,7 @@ String username="guest";
   */
   @Security.Authenticated(Secured.class)
   public Result admin() {
-  	User usr =User.find.where().eq("username", username).findUnique();
+  	User usr =User.find.where().eq("username", globalusername).findUnique();
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
@@ -90,16 +90,52 @@ String username="guest";
   }
   
   public Result register() {
-  	User usr =User.find.where().eq("username", username).findUnique();
+  	User usr =User.find.where().eq("username", globalusername).findUnique();
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.register.render("",""));
+   return ok(views.html.register.render(Form.form(RegisterUser.class),"",""));
    }
    else{
-   	return ok(views.html.register.render(usr.username,usr.role)); 
+   	return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
    }
     //return ok(views.html.register.render());
+  }
+  
+  public Result registerUser() {
+  	
+  	
+    String name;
+    String newusername;
+    String password;
+    String email;
+    String role="user";
+  
+    User usr =User.find.where().eq("username", globalusername).findUnique();
+  	
+    Form<RegisterUser> registerForm = Form.form(RegisterUser.class).bindFromRequest();
+    
+    if (registerForm.hasErrors()) 
+    {
+        return badRequest(register.render(registerForm,usr.username,usr.role));
+    } 
+    else 
+    {
+        //session().clear();
+        //session("email", loginForm.get().email);
+        name = registerForm.get().name;
+        newusername = registerForm.get().newusername;
+        password = registerForm.get().password;
+        email = registerForm.get().email;
+        
+        // Create a new user and save it
+    	  new User(name, newusername, password,email,role).save();
+        
+        /*session("username", loginForm.get().username);*/
+        //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
+        return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
+    }
+    
   }
   
   public Result links() {
@@ -113,7 +149,7 @@ String username="guest";
   public Result logout() {
     session().clear();
     flash("success", "You've been logged out");
-    username="guest";
+    globalusername="guest";
     return redirect(routes.Application.login());
   }
   
@@ -129,7 +165,7 @@ String username="guest";
     {
         session().clear();
         //session("email", loginForm.get().email);
-        username = loginForm.get().username;
+        globalusername = loginForm.get().username;
         session("username", loginForm.get().username);
         return redirect(routes.Application.index());
     }
@@ -154,4 +190,15 @@ String username="guest";
 	}
 
 	}	
+	
+	 /*inner class*/
+    public static class RegisterUser {
+
+    public String name;
+    public String newusername;
+    public String password;
+    public String email;        
+
+	}		
+	
 }
