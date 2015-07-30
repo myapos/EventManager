@@ -24,7 +24,7 @@ POST    /login             controllers.Application.authenticate()
 
 GET     /logout            controllers.Application.logout()
 
-GET     /admin            controllers.Application.admin()
+GET     /admin             controllers.Application.admin()
 
 
 # Map static resources from the /public folder to the /assets URL path
