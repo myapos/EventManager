@@ -128,6 +128,7 @@ String globalusername="guest";
         password = registerForm.get().password;
         email = registerForm.get().email;
         
+        try{
         // Create a new user and save it
     	  new User(name, username, email, password, role).save();
         
@@ -136,6 +137,11 @@ String globalusername="guest";
         //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
         flash("success", "You've registered!");
         return redirect(routes.Application.register());
+     	  }
+     	  catch(Exception e){
+     	  flash("error", "Somethinq is wrong!"+e.toString());
+        return redirect(routes.Application.register());
+     	  }
     }
     
   }

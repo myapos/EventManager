@@ -128,14 +128,20 @@ String globalusername="guest";
         password = registerForm.get().password;
         email = registerForm.get().email;
         
+        try{
         // Create a new user and save it
-    	  new User(name, username, password, email, role).save();
+    	  new User(name, username, email, password, role).save();
         
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
         //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
         flash("success", "You've registered!");
         return redirect(routes.Application.register());
+     	  }
+     	  catch(Exception e){
+     	  flash("error", "Somethinq is wrong!");
+        return redirect(routes.Application.register());
+     	  }
     }
     
   }
