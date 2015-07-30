@@ -62,6 +62,10 @@ String username="guest";
   }
   */
   
+  public Result admin() {
+    return ok(views.html.admin.render());
+  }
+  
   public Result contact() {
     return ok(views.html.contact.render());
   }

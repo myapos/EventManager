@@ -6,6 +6,8 @@
 
 GET     /                  controllers.Application.index()
 
+#GET     /:username         controllers.Application.index(username)
+
 GET     /myName/:name      controllers.Application.myName(name)
 
 GET     /services          controllers.Application.services()

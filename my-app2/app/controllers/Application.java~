@@ -49,7 +49,7 @@ String username="guest";
     //return ok(toJson(users));
     User usr =User.find.where().eq("username", username).findUnique();
     String test = username+" test role:"+usr.role;
-    return ok(views.html.index.render(usr.role,usr.role));
+    return ok(views.html.index.render(usr.username,usr.role));
   }
   
   public Result services() {
@@ -61,6 +61,10 @@ String username="guest";
     return ok(views.html.services.render());
   }
   */
+  
+  public Result admin() {
+    return ok(views.html.contact.render());
+  }
   
   public Result contact() {
     return ok(views.html.contact.render());

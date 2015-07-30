@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, user: User)(content: Html)
 <!DOCTYPE html>
 <html>
   <head>
@@ -90,6 +90,7 @@ $(document).ready(function() {
 						<li><a href="./register" id="link7">Register</a></li> 
 						<li><a href="./links" id="link8">Links</a></li> 
 						<li><a href="./login" id="link9">Login</a></li> 
+						<li><a href="./login" id="link10">Admin</a></li> 
 			      </ul>
 			      </ul>
 			    </div>

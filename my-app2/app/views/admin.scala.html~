@@ -1,0 +1,5 @@
+@main(title = "Admin Area" , null) {
+
+<h1>Home page</h1>
+<p>Hello from Admin Area</p>
+}
