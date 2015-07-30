@@ -41,15 +41,20 @@
       <button type="submit" class="btn btn-default">Submit</button>
       
       @if(form.hasGlobalErrors) {
-    <p class="error">
-        @form.globalError.message
-    </p>
-	}
-	@if(flash.contains("success")) {
-    <p class="success">
-        @flash.get("success")
-    </p>
-	}
+    	<p class="error">
+     	   @form.globalError.message
+   	 </p>
+		}
+		@if(flash.contains("error")) {
+    	<p class="error">
+     	   @flash.get("success")
+    	</p>
+		}
+		@if(flash.contains("success")) {
+    	<p class="success">
+     	   @flash.get("success")
+    	</p>
+		}
  
 }</div>
 }
