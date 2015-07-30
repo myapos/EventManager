@@ -129,10 +129,11 @@ String globalusername="guest";
         email = registerForm.get().email;
         
         // Create a new user and save it
-    	  new User(name, username, password,email,role).save();
+    	  new User(name, username, password, email, role).save();
         
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
+        //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
         return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
     }
     
