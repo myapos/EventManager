@@ -72,11 +72,11 @@ String username="guest";
   */
   @Security.Authenticated(Secured.class)
   public Result admin() {
-  	 User usr =User.find.where().eq("username", username).findUnique();
+  	User usr =User.find.where().eq("username", username).findUnique();
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.index.render("",""));
+   return ok(views.html.admin.render("",""));
    }
    else{
    	return ok(views.html.admin.render(usr.username,usr.role)); 
@@ -90,7 +90,16 @@ String username="guest";
   }
   
   public Result register() {
-    return ok(views.html.register.render());
+  	User usr =User.find.where().eq("username", username).findUnique();
+  	 
+    //return ok(views.html.admin.render());
+   if(usr==null){
+   return ok(views.html.register.render("",""));
+   }
+   else{
+   	return ok(views.html.register.render(usr.username,usr.role)); 
+   }
+    //return ok(views.html.register.render());
   }
   
   public Result links() {

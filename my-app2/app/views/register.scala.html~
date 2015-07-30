@@ -1,5 +1,45 @@
-@main(title = "Register Page") {
-
+@(username: String, role:String)
+@main(title = "Register Page", null) {
+<div class="col-xs-12 welcome-msg">
+        
+      @role match {   
+ 		case "user" => {
+ 		   Welcome, @username. Currently you are logged in as @role. <a href="@routes.Application.logout()">Logout</a>
+  		}
+  		case "admin" => {
+  		  <p>Welcome, @username. Currently you are logged in as @role. <br>
+  		  If you want to logout click here:   <a href="@routes.Application.logout()">Logout</a> <br>
+  		  If you want to upload an event click here: <a href="@routes.Application.admin()">admin area</a>.</p>
+  		}
+  		case "" => {
+  		  Welcome guest.
+  		}
+}		
+</div>
 <h1>Home page</h1>
 <p>Hello  from Register Page</p>
+<div class="my-form-container">
+@helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "register-form") {
+<p>Please fill in register form</p>
+   <h3>Location</h3>
+  
+      <div class="form-group">
+    		<label for="name">Name:</label>
+      	<input type="text" class="form-control" name="name" id="name" placeholder="name">
+      </div>
+   	<div class="form-group">
+    		<label for="username">Username:</label>
+      	<input type="text" class="form-control" name="username" id="username" placeholder="username">
+      </div>
+      <div class="form-group">
+    		<label for="email">Latitude:</label>
+      	<input type="email" class="form-control" name="email" id="email" placeholder="email">
+      </div>
+      <div class="form-group">
+    		<label for="password">Password:</label>
+      	<input type="text" class="form-control" name="password" id="password" placeholder="password">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+ 
+}</div>
 }

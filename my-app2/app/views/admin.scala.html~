@@ -17,13 +17,12 @@
 }		
 </div>
 <h1>Admin Area</h1>
-<p>Hello from Admin Area</p>
 
-<p>Please fill in location form</p>
 <div class="my-form-container">
 @helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "location-form") {
+<p>Please fill in location form</p>
    <h1>Location</h1>
-  <!--<input type="email" name="email" placeholder="Email" value="@form("email").value">-->
+  
       <div class="form-group">
     		<label for="name">Name:</label>
       	<input type="text" class="form-control" name="name" id="name" placeholder="name">
@@ -46,11 +45,11 @@
 
 
 
-<p>Please fill in event form</p>
+
 <div class="my-form-container">
 @helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "event-form") {
+<p>Please fill in event form</p>
    <h1>Event</h1>
-  <!--<input type="email" name="email" placeholder="Email" value="@form("email").value">-->
       <div class="form-group">
     		<label for="description">Description:</label>
     		<textarea class="form-control" name="description" id="description" placeholder="description" rows="10" cols="70"></textarea>
