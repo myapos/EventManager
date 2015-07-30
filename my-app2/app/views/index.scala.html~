@@ -2,25 +2,20 @@
 @main(title = "Home", null) {
 
 <div class="row">  	  
-        <div class="col-xs-12">
+  <div class="col-xs-12">
         
-      @role match {
-    
+      @role match {   
  		case "user" => {
  		   Welcome, @username. Currently you are logged in as @role. <a href="@routes.Application.logout()">Logout</a>
   		}
-
   		case "admin" => {
   		  Welcome, @username. Currently you are logged in as @role. <a href="@routes.Application.logout()">Logout</a>
   		}
-
   		case "" => {
   		  Welcome guest.
   		}
-    
-}
-				
-		  </div>
+}		
+</div>
 
 </div>
 <div class="row">  	  

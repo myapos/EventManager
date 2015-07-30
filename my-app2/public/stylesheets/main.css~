@@ -103,7 +103,7 @@ font-weight: bold;
 font-family: Helvetica Neue, times, serif;
 }
 
-.myLinks{
+.list-group{
 color: red;
 }
 	
