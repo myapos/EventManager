@@ -134,7 +134,7 @@ String globalusername="guest";
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
         //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
-        return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
+        return ok(views.html.register.render(registerForm,usr.username,usr.role)); 
     }
     
   }
