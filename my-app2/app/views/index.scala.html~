@@ -25,7 +25,7 @@
 </div> 
 <div class="row" >  	  
          <div class="col-xs-6" class="calendar-container">			
-				
+				<h3></h3>
 				<div id="calendar"></div>
 			</div>
 		 <div class="col-xs-6" class="latest-events-container">			
@@ -55,7 +55,7 @@
 </div>
 <div class="row">  	  
         <div class="col-xs-12">			
-				<p>Event Map</p>
+				<h3>Event Map</h3>
 				<div id="map"></div>
 				<script src="@routes.Assets.at("javascripts/my.js")"></script> 
 			</div>
