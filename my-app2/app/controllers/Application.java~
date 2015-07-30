@@ -106,7 +106,7 @@ String globalusername="guest";
   	
   	
     String name;
-    String newusername;
+    String username;
     String password;
     String email;
     String role="user";
@@ -124,7 +124,7 @@ String globalusername="guest";
         //session().clear();
         //session("email", loginForm.get().email);
         name = registerForm.get().name;
-        newusername = registerForm.get().newusername;
+        username = registerForm.get().username;
         password = registerForm.get().password;
         email = registerForm.get().email;
         
@@ -149,7 +149,7 @@ String globalusername="guest";
   public Result logout() {
     session().clear();
     flash("success", "You've been logged out");
-    username="guest";
+    globalusername="guest";
     return redirect(routes.Application.login());
   }
   
@@ -195,7 +195,7 @@ String globalusername="guest";
     public static class RegisterUser {
 
     public String name;
-    public String newusername;
+    public String username;
     public String password;
     public String email;        
 

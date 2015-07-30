@@ -106,7 +106,7 @@ String globalusername="guest";
   	
   	
     String name;
-    String newusername;
+    String username;
     String password;
     String email;
     String role="user";
@@ -124,12 +124,12 @@ String globalusername="guest";
         //session().clear();
         //session("email", loginForm.get().email);
         name = registerForm.get().name;
-        newusername = registerForm.get().newusername;
+        username = registerForm.get().username;
         password = registerForm.get().password;
         email = registerForm.get().email;
         
         // Create a new user and save it
-    	  new User(name, newusername, password,email,role).save();
+    	  new User(name, username, password,email,role).save();
         
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
@@ -195,7 +195,7 @@ String globalusername="guest";
     public static class RegisterUser {
 
     public String name;
-    public String newusername;
+    public String username;
     public String password;
     public String email;        
 

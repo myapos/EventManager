@@ -19,7 +19,7 @@
 <h1>Home page</h1>
 <p>Hello  from Register Page</p>
 <div class="my-form-container">
-@helper.form(routes.Application.registeruser, 'role -> "form", 'id -> "register-form") {
+@helper.form(routes.Application.registerUser, 'role -> "form", 'id -> "register-form") {
 <p></p>
    <h3>Register - Please fill in register form</h3>
   
