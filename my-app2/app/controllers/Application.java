@@ -37,7 +37,7 @@ String username="guest";
     return ok(views.html.myname.render(name));
   }
   
-  @Security.Authenticated(Secured.class)
+  
   public Result index() {
   	
     //return ok(views.html.index.render());
@@ -61,7 +61,7 @@ String username="guest";
     return ok(views.html.services.render());
   }
   */
-  
+  @Security.Authenticated(Secured.class)
   public Result admin() {
     return ok(views.html.admin.render());
   }
