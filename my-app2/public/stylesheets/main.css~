@@ -69,10 +69,18 @@ a:active {
 margin:5px;
 }
 .content{
+/*text-align: center;*/
+}
+
+.calendar-container{
 text-align: center;
 }
 
+.latest-events-container{
+text-align: center;
+}
 #search-form{
+text-align: center;
 margin-top:10px;
 margin-bottom: 10px;
 }
@@ -106,4 +114,7 @@ font-family: Helvetica Neue, times, serif;
 .list-group{
 color: red;
 }
-	
+
+.welcome-msg{
+text-align: left;
+}	
