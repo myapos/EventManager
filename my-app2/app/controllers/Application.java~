@@ -37,15 +37,20 @@ String username="guest";
     return ok(views.html.myname.render(name));
   }
   
-  @Security.Authenticated(Secured.class)
+  
   public Result index() {
   	
     //return ok(views.html.index.render());
     //System.out.println("user: "+User.find.byId(request().username())+" username: "+User.find.where().eq("username",User.find.byId(request().username())));
     
     //return ok(views.html.index.render(User.find.where().eq("username", User.find.byId(request().username()))));
-    return ok(views.html.index.render(User.find.byId(request().username())));
-    
+    //return ok(views.html.index.render(User.find.byId(request().username())));
+    //List<User> users = new Model.Finder(String.class, User.class).all();
+    //return ok(toJson(users));
+    User usr =User.find.where().eq("username", username).findUnique();
+    //String test = username+" test role:"+usr.role;
+    //return ok(views.html.index.render(usr.username,usr.role));
+    return ok(views.html.index.render());
   }
   
   public Result services() {
@@ -57,6 +62,10 @@ String username="guest";
     return ok(views.html.services.render());
   }
   */
+  @Security.Authenticated(Secured.class)
+  public Result admin() {
+    return ok(views.html.admin.render());
+  }
   
   public Result contact() {
     return ok(views.html.contact.render());

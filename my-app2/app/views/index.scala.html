@@ -1,8 +1,10 @@
+@(username: String, role:String)
 @main(title = "Home", null) {
 
 <div class="row">  	  
         <div class="col-xs-12">
 				<h1>Here you can see all events that are registered in our system</h1>
+				Welcome, @username. Currently you are logged in as @role. <a href="@routes.Application.logout()">Logout</a>
 			</div>
 </div> 
 <div class="row" >  	  
