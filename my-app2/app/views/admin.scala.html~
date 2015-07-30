@@ -1,7 +1,8 @@
 @(username: String, role:String)
 @main(title = "Admin Area" , null) {
-<div class="col-xs-12 welcome-msg">
-        
+
+<div class="row"> 
+	<div class="col-xs-4 welcome-msg">  
       @role match {   
  		case "user" => {
  		   Welcome, @username. Currently you are logged in as @role. <a href="@routes.Application.logout()">Logout</a>
@@ -15,13 +16,15 @@
   		  Welcome guest.
   		}
 }		
+	</div>
 </div>
+
 <h1>Admin Area</h1>
 
 <div class="my-form-container">
 @helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "location-form") {
 <p></p>
-   <h3>Location-Please fill in location form</h3>
+   <h3>Location - Please fill in location form</h3>
   
       <div class="form-group">
     		<label for="name">Name:</label>
@@ -48,8 +51,8 @@
 
 <div class="my-form-container">
 @helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "event-form") {
-<p>/p>
-   <h3>Event - Please fill in event form<</h3>
+<p></p>
+   <h3>Event - Please fill in event form</h3>
       <div class="form-group">
     		<label for="description">Description:</label>
     		<textarea class="form-control" name="description" id="description" placeholder="description" rows="10" cols="70"></textarea>

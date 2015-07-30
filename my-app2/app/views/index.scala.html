@@ -1,8 +1,10 @@
 @(username: String, role:String)
 @main(title = "Home", null) {
 
- 	  
-<div class="col-xs-12 welcome-msg">
+<div class="row"> 	  
+	<div class="col-xs-4 welcome-msg"> </div>
+	<div class="col-xs-4 welcome-msg"> </div>
+	<div class="col-xs-4 welcome-msg">  
         
       @role match {   
  		case "user" => {
@@ -17,8 +19,8 @@
   		  Welcome guest.
   		}
 }		
+	</div>
 </div>
-
 <div class="row">  	  
         <div class="col-xs-12">
 				<h1>Here you can see all events that are registered in our system</h1>			
