@@ -52,10 +52,13 @@ String username="guest";
    if(usr==null){
    return ok(views.html.index.render("",""));
    }
-   else{return ok(views.html.index.render(usr.username,usr.role)); }
+   else{
+   	return ok(views.html.index.render(usr.username,usr.role)); 
+   	}
+   /*	
     //String test = username+" test role:"+usr.role;
     return ok(views.html.index.render(usr.username,usr.role));
-    //return ok(views.html.index.render());
+    //return ok(views.html.index.render());*/
   }
   
   public Result services() {
@@ -69,7 +72,17 @@ String username="guest";
   */
   @Security.Authenticated(Secured.class)
   public Result admin() {
-    return ok(views.html.admin.render());
+  	 User usr =User.find.where().eq("username", username).findUnique();
+  	 
+    //return ok(views.html.admin.render());
+    if(usr==null){
+   return ok(views.html.index.render("",""));
+   }
+   else{
+   	return ok(views.html.admin.render(usr.username,usr.role)); 
+   }
+   	
+    //return ok(views.html.admin.render());
   }
   
   public Result contact() {

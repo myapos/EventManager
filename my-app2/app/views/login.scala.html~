@@ -1,6 +1,6 @@
 @(form: Form[Application.Login])
 @main(title = "Login Page", null) {
-
+<div class="my-form-container">
 @helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "login-form") {
    <h1>Please sign in</h1>
   <!--<input type="email" name="email" placeholder="Email" value="@form("email").value">-->
@@ -24,7 +24,7 @@
         @flash.get("success")
     </p>
 	}
-}
+}</div>
 }
 
 

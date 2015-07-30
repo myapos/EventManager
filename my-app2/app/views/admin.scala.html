@@ -1,5 +1,84 @@
+@(username: String, role:String)
 @main(title = "Admin Area" , null) {
-
+<div class="col-xs-12 welcome-msg">
+        
+      @role match {   
+ 		case "user" => {
+ 		   Welcome, @username. Currently you are logged in as @role. <a href="@routes.Application.logout()">Logout</a>
+  		}
+  		case "admin" => {
+  		  <p>Welcome, @username. Currently you are logged in as @role. <br>
+  		  If you want to logout click here:   <a href="@routes.Application.logout()">Logout</a> <br>
+  		  If you want to upload an event click here: <a href="@routes.Application.admin()">admin area</a>.</p>
+  		}
+  		case "" => {
+  		  Welcome guest.
+  		}
+}		
+</div>
 <h1>Admin Area</h1>
 <p>Hello from Admin Area</p>
+
+<p>Please fill in location form</p>
+<div class="my-form-container">
+@helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "location-form") {
+   <h1>Location</h1>
+  
+      <div class="form-group">
+    		<label for="name">Name:</label>
+      	<input type="text" class="form-control" name="name" id="name" placeholder="name">
+      </div>
+   	<div class="form-group">
+    		<label for="address">Address:</label>
+      	<input type="text" class="form-control" name="address" id="address" placeholder="address">
+      </div>
+      <div class="form-group">
+    		<label for="latitude">Latitude:</label>
+      	<input type="text" class="form-control" name="latitude" id="latitude" placeholder="latitude">
+      </div>
+      <div class="form-group">
+    		<label for="longitude">Longitude:</label>
+      	<input type="text" class="form-control" name="longitude" id="longitude" placeholder="longitude">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+ 
+}</div>
+
+
+
+<p>Please fill in event form</p>
+<div class="my-form-container">
+@helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "event-form") {
+   <h1>Event</h1>
+      <div class="form-group">
+    		<label for="description">Description:</label>
+    		<textarea class="form-control" name="description" id="description" placeholder="description" rows="10" cols="70"></textarea>
+      	<!--<input type="text" class="form-control" name="description" id="description" placeholder="description">-->
+      </div>
+   	<div class="form-group">
+    		<label for="day">Day:</label>
+      	<input type="text" class="form-control" name="day" id="day" placeholder="day">
+      </div>
+      <div class="form-group">
+    		<label for="hours">Hours:</label>
+      	<input type="text" class="form-control" name="hours" id="hours" placeholder="hours">
+      </div>
+      <div class="form-group">
+    		<label for="location">Location:</label>
+      	<input type="text" class="form-control" name="location" id="location" placeholder="location">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+ 
+}</div>
+
+
+
+
+
+
+
+
+
+
+
 }
