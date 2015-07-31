@@ -265,11 +265,11 @@ String globalusername="guest";
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
         //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
-        flash("successevent", "You've saved event!");
+        flash("successevent", "You've saved event!"+" cdscs "+locationid);
         return redirect(routes.Application.admin());
      	  }
      	  catch(Exception e){
-     	  flash("errorevent", "Somethinq is wrong!"+e.toString());
+     	  flash("errorevent", "Somethinq is wrong!"+e.toString()+" dsds "+locationid);
         return redirect(routes.Application.admin());
      	  }
     }   
