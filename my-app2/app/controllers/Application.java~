@@ -69,11 +69,12 @@ String globalusername="guest";
   	/*
    List<User> users = new Model.Finder(String.class, User.class).all();
     	return ok(toJson(users));*/
-  
+  /*
   List<Event> events = new Model.Finder(String.class, Event.class).all();
-    	return ok(views.html.services.render(events.toString(),"",""));
-    	
-    	
+    	return ok(views.html.services.render(events,"",""));
+  */  	
+  List<Location> locations = new Model.Finder(String.class, Event.class).all();
+    	return ok(views.html.services.render(events,"",""));  	
   }
   /*
   public Result services() {
