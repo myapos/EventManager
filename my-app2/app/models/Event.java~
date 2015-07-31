@@ -19,12 +19,12 @@ public class Event extends Model {
 	public String locationid;
 	
 	
-	public Event(String name, String address, String latitude, String longitude){
+	public Event(String description, String day, String hours, String locationid){
 	
-	this.name=name;
-	this.address=address;
-	this.latitude=latitude;
-	this.longitude=longitude;
+	this.description=description;
+	this.day=day;
+	this.hours=hours;
+	this.locationid=locationid;
 	
 	
 	}

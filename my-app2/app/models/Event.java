@@ -29,7 +29,7 @@ public class Event extends Model {
 	
 	}
 	
-	public static Model.Finder<String, Location> find = new Model.Finder(String.class, Event.class);
+	public static Model.Finder<String, Event> find = new Model.Finder(String.class, Event.class);
 	
 	/*
 	public static Location authenticate(String username, String password) {

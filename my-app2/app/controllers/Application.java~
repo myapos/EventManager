@@ -52,7 +52,9 @@ String globalusername="guest";
     //List<User> users = new Model.Finder(String.class, User.class).all();
     //return ok(toJson(users));
    
-   List<Event> events = new Model.Finder(String.class, Event.class).all();  	    
+   //List<Event> events = new Model.Finder(String.class, Event.class).all();  
+   
+   List<Event> events = Event.find.all().orderBy("day asc");	    
    User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){
