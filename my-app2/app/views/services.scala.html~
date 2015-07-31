@@ -1,4 +1,4 @@
-@(events: Json, username: String, role:String)
+@(events: String, username: String, role:String)
 @main(title = "Services Page" , null) {
 
 <h1>Services page</h1>
