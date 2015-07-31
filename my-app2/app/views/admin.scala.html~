@@ -66,7 +66,7 @@
 
 
 <div class="my-form-container">
-@helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "event-form") {
+@helper.form(routes.Application.registerEvent, 'role -> "form", 'id -> "event-form") {
 <p></p>
    <h3>Event - Please fill in event form</h3>
       <div class="form-group">
@@ -87,7 +87,6 @@
 			<select class="form-control" class="form-control" name="location" id="location" placeholder="location">
 				@for(location <- locations){
  				<option value=@location.id>@location.id @location.name  @location.address @location.latitude @location.longitude</option>   
-    
 				}
 			</select> 
 		</div>
@@ -102,9 +101,9 @@
      	   @flash.get("error")
     	</p>
 		}
-		@if(flash.contains("success")) {
+		@if(flash.contains("successevent")) {
     	<p class="success">
-     	   @flash.get("success")
+     	   @flash.get("successevent")
     	</p>
 		}
 }</div>

@@ -218,23 +218,62 @@ String globalusername="guest";
   
   
   public Result event() {
-  	/*
+  	
   	User usr =User.find.where().eq("username", globalusername).findUnique();
+  	List<Location> locations = new Model.Finder(String.class, Location.class).all();
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.admin.render(Form.form(RegisterLocation.class),null,"",""));
+   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),locations,"",""));
    }
    else{
-   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),null,usr.username,usr.role)); 
+   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),locations,usr.username,usr.role)); 
    }
-    //return ok(views.html.register.render());
-    */
-    return redirect(routes.Application.admin());
+   
   }
   
   public Result registerEvent() {
-   return redirect(routes.Application.admin());	
+	
+	String description;
+   String day;
+   String hours;
+   String locationid;
+    
+  
+    User usr =User.find.where().eq("username", globalusername).findUnique();
+	 List<Location> locations = new Model.Finder(String.class, Location.class).all();  	
+  	
+    Form<RegisterEvent> registerEventForm = Form.form(RegisterEvent.class).bindFromRequest();
+    
+    if (registerEventForm.hasErrors()) 
+    {
+        return badRequest(admin.render(null,registerEventForm,locations,usr.username,usr.role));
+    } 
+    else 
+    {
+        //session().clear();
+        //session("email", loginForm.get().email);
+        description = registerEventForm.get().description;
+        day = registerEventForm.get().day;
+        hours = registerEventForm.get().hours;
+        locationid = registerEventForm.get().locationid;
+        
+        try{
+        // Create a new user and save it
+    	  new Event(description, day, hours, locationid).save();
+        
+        /*session("username", loginForm.get().username);*/
+        //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
+        //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
+        flash("successevent", "You've saved event!");
+        return redirect(routes.Application.admin());
+     	  }
+     	  catch(Exception e){
+     	  flash("errorevent", "Somethinq is wrong!"+e.toString());
+        return redirect(routes.Application.admin());
+     	  }
+    }   
+   //return redirect(routes.Application.admin());	
 	}   	
    	
   public Result links() {
