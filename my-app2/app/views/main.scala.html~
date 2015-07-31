@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="el">
   <head>
-  <meta charset="iso8859-7">
+  <meta charset="utf8">
   
   <title>@title</title>
   <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")"/>
@@ -102,7 +102,7 @@ $(document).ready(function() {
 		</div>
 	</div>
 
-     ασδαδαδαδαδαδσα
+   
    <section class="content">@content</section>
  
     <div class="row footer" id="bottom-footer">
