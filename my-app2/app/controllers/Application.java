@@ -195,11 +195,11 @@ String globalusername="guest";
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
         //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
-        flash("success", "You've saved location!");
+        flash("successlocation", "You've saved location!");
         return redirect(routes.Application.admin());
      	  }
      	  catch(Exception e){
-     	  flash("error", "Somethinq is wrong!"+e.toString());
+     	  flash("errorlocation", "Somethinq is wrong!"+e.toString());
         return redirect(routes.Application.admin());
      	  }
     }
@@ -223,7 +223,7 @@ String globalusername="guest";
     return redirect(routes.Application.admin());
   }
   
-   public Result registerEvent() {
+  public Result registerEvent() {
    return redirect(routes.Application.admin());	
 	}   	
    	

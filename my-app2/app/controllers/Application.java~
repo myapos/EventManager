@@ -154,10 +154,10 @@ String globalusername="guest";
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.admin.render(Form.form(RegisterLocation.class),null,"",""));
+   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),"",""));
    }
    else{
-   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),null,usr.username,usr.role)); 
+   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),usr.username,usr.role)); 
    }
     //return ok(views.html.register.render());
   }
@@ -195,11 +195,11 @@ String globalusername="guest";
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
         //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
-        flash("success", "You've saved location!");
+        flash("successlocation", "You've saved location!");
         return redirect(routes.Application.admin());
      	  }
      	  catch(Exception e){
-     	  flash("error", "Somethinq is wrong!"+e.toString());
+     	  flash("errorlocation", "Somethinq is wrong!"+e.toString());
         return redirect(routes.Application.admin());
      	  }
     }

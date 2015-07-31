@@ -51,13 +51,13 @@
    	 </p>
 		}
 		@if(flash.contains("error")) {
-    	<p class="error">
-     	   @flash.get("error")
+    	<p class="errorlocation">
+     	   @flash.get("errorlocation")
     	</p>
 		}
-		@if(flash.contains("success")) {
+		@if(flash.contains("successlocation")) {
     	<p class="success">
-     	   @flash.get("success")
+     	   @flash.get("successlocation")
     	</p>
 		}
 }</div>
