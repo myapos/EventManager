@@ -1,8 +1,8 @@
 @(title: String, user: User)(content: Html)
 <!DOCTYPE html>
-<html>
+<html lang="el">
   <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8>
   
   <title>@title</title>
   <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")"/>
