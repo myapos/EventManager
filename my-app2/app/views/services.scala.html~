@@ -11,6 +11,7 @@
     @location.longitude <br>
     
 }
+<div class="form-group">
 <label for="location">Location:</label>
 <select class="form-control" class="form-control" name="location" id="location" placeholder="location">
 @for(location <- locations){
@@ -18,6 +19,8 @@
     
 }
 </select> 
+ </div>
+ 
       <div class="form-group">
     		<label for="location">Location:</label>
  				<select class="form-control" class="form-control" name="location" id="location" placeholder="location">
