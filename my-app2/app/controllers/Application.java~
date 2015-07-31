@@ -10,6 +10,8 @@ import models.User;
 
 import models.Location;
 
+import models.Event;
+
 import play.data.Form;
 
 import play.data.*;
@@ -64,8 +66,14 @@ String globalusername="guest";
   }
   
   public Result services() {
+  	/*
    List<User> users = new Model.Finder(String.class, User.class).all();
+    	return ok(toJson(users));*/
+  
+  List<Event> events = new Model.Finder(String.class, Event.class).all();
     	return ok(toJson(users));
+    	
+    	
   }
   /*
   public Result services() {
@@ -223,7 +231,7 @@ String globalusername="guest";
     return redirect(routes.Application.admin());
   }
   
-   public Result registerEvent() {
+  public Result registerEvent() {
    return redirect(routes.Application.admin());	
 	}   	
    	
@@ -303,10 +311,10 @@ String globalusername="guest";
 	 /*inner class*/
   public static class RegisterEvent {
 
-    public String name;
-    public String address;
-    public String latitude;
-    public String longitude;        
+    public String description;
+    public String day;
+    public String hours;
+    public String locationid;        
 
 	}		
 }
