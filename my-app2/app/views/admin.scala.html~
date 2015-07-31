@@ -1,4 +1,4 @@
-@(form1: Form[Application.RegisterLocation],form2: Form[Application.RegisterEvent],username: String, role:String)
+@(form1: Form[Application.RegisterLocation],form2: Form[Application.RegisterEvent],locations: List[Location], username: String, role:String)
 @main(title = "Admin Area" , null) {
 
 <div class="row"> 
@@ -50,8 +50,8 @@
      	   @form1.globalError.message
    	 </p>
 		}
-		@if(flash.contains("error")) {
-    	<p class="errorlocation">
+		@if(flash.contains("errorlocation")) {
+    	<p class="error">
      	   @flash.get("errorlocation")
     	</p>
 		}
