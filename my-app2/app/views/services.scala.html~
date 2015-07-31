@@ -1,6 +1,14 @@
-@(events: String, username: String, role:String)
+@(events: List[Event], username: String, role:String)
 @main(title = "Services Page" , null) {
 
 <h1>Services page</h1>
 <p>Hello from Services Page</p>
+@for(event <- events){
+    @event.id <br>
+    @event.description <br>
+    @event.day <br>
+    @event.hours <br>
+    @event.id <br>
+    @event.id <br>
+}
 }
