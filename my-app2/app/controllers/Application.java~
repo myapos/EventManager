@@ -84,6 +84,7 @@ String globalusername="guest";
   @Security.Authenticated(Secured.class)
   public Result admin() {
   	User usr =User.find.where().eq("username", globalusername).findUnique();
+  	List<Location> locations = new Model.Finder(String.class, Location.class).all();
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
@@ -186,7 +187,7 @@ String globalusername="guest";
     
     if (registerLocationForm.hasErrors()) 
     {
-        return badRequest(admin.render(registerLocationForm,null,usr.username,usr.role));
+        return badRequest(admin.render(registerLocationForm,null,null,usr.username,usr.role));
     } 
     else 
     {

@@ -83,15 +83,14 @@
       	<input type="text" class="form-control" name="hours" id="hours" placeholder="hours">
       </div>
       <div class="form-group">
-    		<label for="location">Location:</label>
- 				<select class="form-control" class="form-control" name="location" id="location" placeholder="location">
-    				<option>1</option>
-    				<option>2</option>
-    				<option>3</option>
-    				<option>4</option>
-  				</select>
-      	<!--<input type="text" class="form-control" name="location" id="location" placeholder="location">-->
-      </div>
+			<label for="location">Location:</label>
+			<select class="form-control" class="form-control" name="location" id="location" placeholder="location">
+				@for(location <- locations){
+ 				<option value=@location.id>@location.id @location.name  @location.address @location.latitude @location.longitude</option>   
+    
+				}
+			</select> 
+		</div>
       <button type="submit" class="btn btn-default">Submit</button>
       @if(form2.hasGlobalErrors) {
     	<p class="error">

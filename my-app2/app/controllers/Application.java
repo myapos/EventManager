@@ -84,13 +84,14 @@ String globalusername="guest";
   @Security.Authenticated(Secured.class)
   public Result admin() {
   	User usr =User.find.where().eq("username", globalusername).findUnique();
+  	List<Location> locations = new Model.Finder(String.class, Location.class).all();
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),null,"",""));
+   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),locations,"",""));
    }
    else{
-   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),null,usr.username,usr.role)); 
+   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),locations,usr.username,usr.role)); 
    }
    	
     //return ok(views.html.admin.render());
