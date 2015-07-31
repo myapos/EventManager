@@ -71,7 +71,7 @@ String globalusername="guest";
     	return ok(toJson(users));*/
   
   List<Event> events = new Model.Finder(String.class, Event.class).all();
-    	return ok(toJson(users));
+    	return ok(views.html.services.render(toJson(events),"",""));
     	
     	
   }
