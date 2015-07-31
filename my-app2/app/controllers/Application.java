@@ -8,6 +8,8 @@ import views.html.*;
 
 import models.User;
 
+import models.Location;
+
 import play.data.Form;
 
 import play.data.*;
@@ -76,10 +78,10 @@ String globalusername="guest";
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.admin.render("",""));
+   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),"",""));
    }
    else{
-   	return ok(views.html.admin.render(usr.username,usr.role)); 
+   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),usr.username,usr.role)); 
    }
    	
     //return ok(views.html.admin.render());
@@ -146,6 +148,85 @@ String globalusername="guest";
     
   }
   
+  
+  public Result location() {
+  	User usr =User.find.where().eq("username", globalusername).findUnique();
+  	 
+    //return ok(views.html.admin.render());
+   if(usr==null){
+   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),"",""));
+   }
+   else{
+   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),usr.username,usr.role)); 
+   }
+    //return ok(views.html.register.render());
+  }
+  
+  public Result registerLocation() {
+  	
+  	
+    String name;
+    String address;
+    String latitude;
+    String longitude;
+    
+  
+    User usr =User.find.where().eq("username", globalusername).findUnique();
+  	
+    Form<RegisterLocation> registerLocationForm = Form.form(RegisterLocation.class).bindFromRequest();
+    
+    if (registerLocationForm.hasErrors()) 
+    {
+        return badRequest(admin.render(registerLocationForm,null,usr.username,usr.role));
+    } 
+    else 
+    {
+        //session().clear();
+        //session("email", loginForm.get().email);
+        name = registerLocationForm.get().name;
+        address = registerLocationForm.get().address;
+        latitude = registerLocationForm.get().latitude;
+        longitude = registerLocationForm.get().longitude;
+        
+        try{
+        // Create a new user and save it
+    	  new Location(name, address, latitude, longitude).save();
+        
+        /*session("username", loginForm.get().username);*/
+        //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
+        //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
+        flash("success", "You've saved location!");
+        return redirect(routes.Application.admin());
+     	  }
+     	  catch(Exception e){
+     	  flash("error", "Somethinq is wrong!"+e.toString());
+        return redirect(routes.Application.admin());
+     	  }
+    }
+    
+  }
+  
+  
+  public Result event() {
+  	/*
+  	User usr =User.find.where().eq("username", globalusername).findUnique();
+  	 
+    //return ok(views.html.admin.render());
+   if(usr==null){
+   return ok(views.html.admin.render(Form.form(RegisterLocation.class),null,"",""));
+   }
+   else{
+   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),null,usr.username,usr.role)); 
+   }
+    //return ok(views.html.register.render());
+    */
+    return redirect(routes.Application.admin());
+  }
+  
+   public Result registerEvent() {
+   return redirect(routes.Application.admin());	
+	}   	
+   	
   public Result links() {
     return ok(views.html.links.render());
   }
@@ -199,8 +280,8 @@ String globalusername="guest";
 
 	}	
 	
-	 /*inner class*/
-    public static class RegisterUser {
+  /*inner class*/
+  public static class RegisterUser {
 
     public String name;
     public String username;
@@ -209,4 +290,23 @@ String globalusername="guest";
 
 	}		
 	
+  /*inner class*/
+  public static class RegisterLocation {
+
+    public String name;
+    public String address;
+    public String latitude;
+    public String longitude;        
+
+	}		
+	
+	 /*inner class*/
+  public static class RegisterEvent {
+
+    public String name;
+    public String address;
+    public String latitude;
+    public String longitude;        
+
+	}		
 }

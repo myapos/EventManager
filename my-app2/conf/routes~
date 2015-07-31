@@ -23,11 +23,15 @@ GET     /login             controllers.Application.login()
 POST    /login             controllers.Application.authenticate()
 
 
-POST    /register          controllers.Application.registeruser()
+POST    /register          controllers.Application.registerUser()
 
 GET     /logout            controllers.Application.logout()
 
 GET     /admin             controllers.Application.admin()
+
+POST    /location          controllers.Application.registerLocation()
+
+POST    /event          controllers.Application.registerEvent()
 
 
 # Map static resources from the /public folder to the /assets URL path
