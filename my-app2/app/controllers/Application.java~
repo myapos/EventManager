@@ -269,7 +269,7 @@ String globalusername="guest";
         return redirect(routes.Application.admin());
      	  }
      	  catch(Exception e){
-     	  flash("errorevent", "Somethinq is wrong!"+e.toString()+" dsds"+locationid);
+     	  flash("errorevent", "Somethinq is wrong!"+e.toString()+" dsds "+locationid);
         return redirect(routes.Application.admin());
      	  }
     }   
