@@ -96,9 +96,9 @@
      	   @form2.globalError.message
    	 </p>
 		}
-		@if(flash.contains("error")) {
+		@if(flash.contains("errorevent")) {
     	<p class="error">
-     	   @flash.get("error")
+     	   @flash.get("errorevent")
     	</p>
 		}
 		@if(flash.contains("successevent")) {
