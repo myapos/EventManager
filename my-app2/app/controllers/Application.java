@@ -51,13 +51,16 @@ String globalusername="guest";
     //return ok(views.html.index.render(User.find.byId(request().username())));
     //List<User> users = new Model.Finder(String.class, User.class).all();
     //return ok(toJson(users));
-    User usr =User.find.where().eq("username", globalusername).findUnique();
+   
+   List<Event> events = new Model.Finder(String.class, Event.class).all();  
+   	    
+   User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){
-   return ok(views.html.index.render("",""));
+   return ok(views.html.index.render(events,"",""));
    }
    else{
-   	return ok(views.html.index.render(usr.username,usr.role)); 
+   	return ok(views.html.index.render(events,usr.username,usr.role)); 
    	}
    /*	
     //String test = username+" test role:"+usr.role;
