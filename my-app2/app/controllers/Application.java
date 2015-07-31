@@ -87,10 +87,10 @@ String globalusername="guest";
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),"",""));
+   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),null,"",""));
    }
    else{
-   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),usr.username,usr.role)); 
+   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),null,usr.username,usr.role)); 
    }
    	
     //return ok(views.html.admin.render());
@@ -163,10 +163,10 @@ String globalusername="guest";
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),"",""));
+   return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),null,"",""));
    }
    else{
-   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),usr.username,usr.role)); 
+   	return ok(views.html.admin.render(Form.form(RegisterLocation.class),Form.form(RegisterEvent.class),null,usr.username,usr.role)); 
    }
     //return ok(views.html.register.render());
   }
@@ -186,7 +186,7 @@ String globalusername="guest";
     
     if (registerLocationForm.hasErrors()) 
     {
-        return badRequest(admin.render(registerLocationForm,null,usr.username,usr.role));
+        return badRequest(admin.render(registerLocationForm,null,null,usr.username,usr.role));
     } 
     else 
     {
