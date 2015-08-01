@@ -66,11 +66,20 @@ String globalusername="guest";
 	
 	//List<Location> locations  = Location.find.findList();
 	
+	/*
 	List<Event> events=Ebean.find(Event.class)
      .select("location.name, location.address, description, day, hours")
-     .where()
-     .eq("location.id",locationid)
+     //.where()
+     //.eq("location.id",locationid)
      .findList();
+     
+     */
+   List<Location> events=Ebean.find(Event.class)
+     .select("location.name, location.address, description, day, hours")
+     //.where()
+     //.eq("location.id",locationid)
+     .findList();  
+     
    /*  
 	int test=0;
 	//List<Location> myeventloclist = new ArrayList();
