@@ -352,8 +352,8 @@ String globalusername="guest";
         // Create a new user and save it
     	  Event event = new Event(description, day, hours, location_id);
     	  //locations.get(locations.size() - 1).events.add(event);
-        Ebean.save(locations); 
-        Ebean.save(event); 
+        /Ebean.save(locations); 
+        //Ebean.save(event); 
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
         //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
