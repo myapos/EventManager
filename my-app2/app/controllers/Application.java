@@ -54,13 +54,14 @@ String globalusername="guest";
    
    //List<Event> events = new Model.Finder(String.class, Event.class).all();  
    
-   //List<Event> events = Event.find.orderBy("day desc").findList();	   
+   List<Event> events = Event.find.orderBy("day desc").findList();	   
    
+   /*
    List<Event> events = Event.find
    		.fetch("location")
    		.where().eq("event.locationid", "location.id")
    		.findList();
-      
+   */   
    User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){

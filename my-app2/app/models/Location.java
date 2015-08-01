@@ -3,11 +3,14 @@ package models;
 import play.db.ebean.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Location extends Model {
 
 	@Id
+	@OneToOne
+   @JoinColumn(table = "event", referencedColumnName = "locationid")
 	public String id;
 
 	public String name;

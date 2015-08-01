@@ -8,6 +8,8 @@ import javax.persistence.Id;
 public class Location extends Model {
 
 	@Id
+	@OneToOne
+   @JoinColumn(table = "event", referencedColumnName = "locationid")
 	public String id;
 
 	public String name;
@@ -20,13 +22,13 @@ public class Location extends Model {
 	
 	
 	
-	public Location(String name, String username, String email, String password, String role){
+	public Location(String name, String address, String latitude, String longitude){
 	
 	this.name=name;
-	this.username=username;
-	this.email=email;
-	this.password=password;
-	this.role=role;
+	this.address=address;
+	this.latitude=latitude;
+	this.longitude=longitude;
+	
 	
 	}
 	
