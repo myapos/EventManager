@@ -20,7 +20,7 @@ public class Event extends Model {
 	public int location_id;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "location_id", referencedColumnName = "location.id")
+	@JoinColumn(name = "id", referencedColumnName = "location_id")
 	//public int location_id;
 	private Location location;
 	
