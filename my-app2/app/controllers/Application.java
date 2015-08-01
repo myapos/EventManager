@@ -351,7 +351,7 @@ String globalusername="guest";
         try{
         // Create a new user and save it
     	  Event event = new Event(description, day, hours, location_id);
-    	  locations.get(locations.size() - 1).events.add(event);
+    	  //locations.get(locations.size() - 1).events.add(event);
         Ebean.save(locations); 
         Ebean.save(event); 
         /*session("username", loginForm.get().username);*/
