@@ -25,7 +25,7 @@ public class Event extends Model {
 	//private Location location;
 	
 	@ManyToOne(optional = false, cascade=CascadeType.PERSIST)
-  	@JoinColumn(name = "location_id", referencedColumnName = "location.id")
+  	@JoinColumn(name = "location_id", referencedColumnName = "id")
   	private Location location;
 	
 	public Event(String description, String day, String hours, int location_id){
