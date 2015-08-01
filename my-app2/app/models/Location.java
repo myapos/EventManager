@@ -22,7 +22,7 @@ public class Location extends Model {
 	public String longitude;
 	
 	@OneToMany(cascade=CascadeType.ALL) 
-   private List<Event> events;
+   public List<Event> events;
 	
 	public Location(String name, String address, String latitude, String longitude){
 	
