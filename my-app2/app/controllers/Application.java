@@ -16,7 +16,8 @@ import play.data.Form;
 
 import play.data.*;
 
-import java.util.List;
+import java.util.*;
+
 
 import play.db.ebean.Model;
 
@@ -59,15 +60,32 @@ String globalusername="guest";
    //List<Event> events = Event.find.orderBy("day desc").findList();	   
 
 	//List<Location> locations  = Location.find.where().join("Event").where().eq("location.id","event.locationid").findList(); 
+
+	List<Event> events = Event.find.orderBy("day desc").findList();	
 	
-	//List<Location> locations  = Location.find.where().eq("events.locationid","locations.id").findList();
+	
+	List<Location> locations  = Location.find.findList();
+	int test=0;
+	//List<Location> myeventloclist = new ArrayList();
+	//ArrayList<Location> myeventloclist = new ArrayList<Location>();
+	List<List<Location>> myeventloclist = new ArrayList<List<Location>>();
+
+	List<Location> locs;
+	
+	for (int i=0; i< events.size(); i++) {
+   test=events.get(i).locationid;
+   //for (int j=0; j< locations.size(); j++) {
+    locs  = Location.find.where().eq("location.id",events.get(i).locationid).findList();
+    myeventloclist.add(locs);
+  		//}
+   }
 	
 	//List<Location> locations  = Location.find.where().eq("events.locationid","locations.id").findList();
 	
 	//List<Location> locations = Location.find.fetch("events")
 										//.where().eq("events.locationid",id).findList();  
 	
-	List<Location> locations =  Location.find.all(); 
+	//List<Location> locations =  Location.find.all(); 
 	
 	/*
 	int i = 0;
@@ -99,10 +117,10 @@ String globalusername="guest";
    User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){
-   return ok(views.html.index.render(locations,"",""));
+   return ok(views.html.index.render(myeventloclist,"",""));
    }
    else{
-   	return ok(views.html.index.render(locations,usr.username,usr.role)); 
+   	return ok(views.html.index.render(myeventloclist,usr.username,usr.role)); 
    	}
    /*	
     //String test = username+" test role:"+usr.role;

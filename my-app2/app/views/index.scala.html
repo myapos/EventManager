@@ -1,4 +1,4 @@
-@(locations: List[Location],username: String, role:String)
+@(locevents: List[List[Location]],username: String, role:String)
 @main(title = "Home", null) {
 
 <div class="row"> 	  
@@ -37,13 +37,8 @@
 				<div class="latest-events">
 				<ul id="vertical-ticker">
 					<!-- -->
-						@for(location <- locations){
- 						<li> @location.name @location.address 
- 								@for(event <- location.events){
- 								@event.locationid
- 								}
- 
- 						</li>   
+						@for(locevent <- locevents){
+ 						<li> @locevent	</li>   
     					}
 				</ul>
 			   </div>
