@@ -4,12 +4,14 @@ import play.db.ebean.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.*;
+import models.Event;
+import java.util.List;
 
 @Entity
 public class Location extends Model {
 
 	@Id
-	public String id;
+	public int id;
 
 	public String name;
 	
@@ -19,7 +21,8 @@ public class Location extends Model {
 	
 	public String longitude;
 	
-	
+	@OneToMany(cascade=CascadeType.ALL) 
+   private List<Event> events;
 	
 	public Location(String name, String address, String latitude, String longitude){
 	

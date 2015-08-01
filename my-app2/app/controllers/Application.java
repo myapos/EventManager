@@ -58,9 +58,17 @@ String globalusername="guest";
    
    //List<Event> events = Event.find.orderBy("day desc").findList();	   
 
+	//List<Location> locations  = Location.find.where().join("Event").where().eq("location.id","event.locationid").findList(); 
+	
+	List<Location> locations  = Location.find.where().eq("events.locationid","location.id").findList();
+	
+	//List<A> aList = A.find.where().join("AB").where().eq("AB.type", "3").findList();  
+	//A.find.where().eq("ab.type",3).findList()
+	//A.find.fetch("ab").where().eq("t1.type", 3).findList();
+	/*
 	List<Event> events = Ebean.find(Event.class)
    		.fetch("locationid")   
-   		.findList();   
+   		.findList();  */ 
    
    /*
    List<Event> events = Ebean.find(Event.class)
@@ -72,10 +80,10 @@ String globalusername="guest";
    User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){
-   return ok(views.html.index.render(events,"",""));
+   return ok(views.html.index.render(locations,"",""));
    }
    else{
-   	return ok(views.html.index.render(events,usr.username,usr.role)); 
+   	return ok(views.html.index.render(locations,usr.username,usr.role)); 
    	}
    /*	
     //String test = username+" test role:"+usr.role;
@@ -255,7 +263,7 @@ String globalusername="guest";
 	String description;
    String day;
    String hours;
-   String locationid;
+   int locationid;
     
   
     User usr =User.find.where().eq("username", globalusername).findUnique();
@@ -373,7 +381,7 @@ String globalusername="guest";
     public String description;
     public String day;
     public String hours;
-    public String locationid;        
+    public int locationid;        
 
 	}		
 }

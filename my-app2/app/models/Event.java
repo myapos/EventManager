@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Event extends Model {
 
 	@Id
-	public String id;
+	public int id;
 
 	public String description;
 	
@@ -17,12 +17,11 @@ public class Event extends Model {
 	
 	public String hours;
 	
-	@OneToMany
-   @JoinColumn(table = "location", referencedColumnName = "id")
-	public String locationid;
+	@ManyToOne
+	public int locationid;
 	
 	
-	public Event(String description, String day, String hours, String locationid){
+	public Event(String description, String day, String hours, int locationid){
 	
 	this.description=description;
 	this.day=day;

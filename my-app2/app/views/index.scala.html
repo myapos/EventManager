@@ -1,4 +1,4 @@
-@(events: List[Event],username: String, role:String)
+@(locations: List[Location],username: String, role:String)
 @main(title = "Home", null) {
 
 <div class="row"> 	  
@@ -35,11 +35,7 @@
 				<h3>Latest Events</h3>
 				<!--<div class="smartmarquee latest-events">-->
 				<div class="latest-events">
-					<ul id="vertical-ticker">
-						@for(event <- events){
- 						<li> @event.day @event.description @event.hours @event.locationid</li>   
-    					}
-					</ul>
+
 			   </div>
 			</div>
 </div>

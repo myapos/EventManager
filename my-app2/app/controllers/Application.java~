@@ -58,11 +58,17 @@ String globalusername="guest";
    
    //List<Event> events = Event.find.orderBy("day desc").findList();	   
 
+	//List<Location> locations  = Location.find.where().join("Event").where().eq("location.id","event.locationid").findList(); 
+	
+	List<Location> locations  = Location.find.where().eq("events.locationid","location.id").findList();
+	
+	//List<A> aList = A.find.where().join("AB").where().eq("AB.type", "3").findList();  
+	//A.find.where().eq("ab.type",3).findList()
+	//A.find.fetch("ab").where().eq("t1.type", 3).findList();
+	/*
 	List<Event> events = Ebean.find(Event.class)
-   		 .fetch("name")  
-   		 .fetch("address")    
-   		.where().eq("event.locationid", "location.id")
-   		.findList();   
+   		.fetch("locationid")   
+   		.findList();  */ 
    
    /*
    List<Event> events = Ebean.find(Event.class)
@@ -257,7 +263,7 @@ String globalusername="guest";
 	String description;
    String day;
    String hours;
-   String locationid;
+   int locationid;
     
   
     User usr =User.find.where().eq("username", globalusername).findUnique();
@@ -375,7 +381,7 @@ String globalusername="guest";
     public String description;
     public String day;
     public String hours;
-    public String locationid;        
+    public int locationid;        
 
 	}		
 }
