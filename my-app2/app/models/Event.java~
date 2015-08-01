@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.*;
 
 @Entity
+@Table(name= "event")
 public class Event extends Model {
 
 	@Id
@@ -24,7 +25,8 @@ public class Event extends Model {
 	//public int location_id;
 	//private Location location;
 	
-	@ManyToOne(optional = false, cascade=CascadeType.PERSIST)
+	@ManyToOne
+	@JoinColumn(name="location_id", referencedColumnName="ITEM_ID")
   	private Location location;
 	
 	public Event(String description, String day, String hours, int location_id){
