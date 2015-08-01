@@ -21,7 +21,7 @@ public class Location extends Model {
 	
 	public String longitude;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@ManyToMany(cascade=CascadeType.ALL)
    public List<Event> events;
 	
 	public Location(String name, String address, String latitude, String longitude){
@@ -43,6 +43,7 @@ public class Location extends Model {
 	this.events=events;
 	
 	}
+	
 	
 	public static Model.Finder<String, Location> find = new Model.Finder(String.class, Location.class);
 	

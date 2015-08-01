@@ -17,7 +17,7 @@ public class Event extends Model {
 	
 	public String hours;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToMany(cascade=CascadeType.ALL)
 	public int location_id;
 	
 	
