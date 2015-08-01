@@ -64,9 +64,7 @@ String globalusername="guest";
 	
 	//List<Location> locations  = Location.find.where().eq("events.locationid","locations.id").findList();
 	
-	List<Location> locations = Ebean.find(Location.class)  
-        .fetch("events")  
-        .findList();  
+	List<Location> locations = Ebean.find(Location.class).fetch("events").findList();  
         
 	//List<Location> locations  = Location.find.fetch("events").where().eq("events.locationid","locations.id").findList();
 	
