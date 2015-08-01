@@ -21,7 +21,7 @@ public class Location extends Model {
 	
 	public String longitude;
 	
-	@OneToMany(cascade=CascadeType.ALL,, mappedBy = "location_id")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy = "location_id")
    public List<Event> events;
 	
 	public Location(String name, String address, String latitude, String longitude){
