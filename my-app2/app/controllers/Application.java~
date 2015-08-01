@@ -61,10 +61,17 @@ String globalusername="guest";
 
 	//List<Location> locations  = Location.find.where().join("Event").where().eq("location.id","event.locationid").findList(); 
 
-	List<Event> events = Event.find.orderBy("day desc").findList();	
+	//List<Event> events = Event.find.orderBy("day desc").findList();	
 	
 	
-	List<Location> locations  = Location.find.findList();
+	//List<Location> locations  = Location.find.findList();
+	
+	List<Event> events=Ebean.find(Event.class)
+     .select("location.name, location.address, description, day, hours")
+     .where()
+     .eq("location.id",locationid)
+     .findList();
+   /*  
 	int test=0;
 	//List<Location> myeventloclist = new ArrayList();
 	//ArrayList<Location> myeventloclist = new ArrayList<Location>();
@@ -72,15 +79,24 @@ String globalusername="guest";
 
 	List<Location> locs;
 	
+	
+	
+	
+	
 	for (int i=0; i< events.size(); i++) {
    test=events.get(i).locationid;
    //for (int j=0; j< locations.size(); j++) {
-    locs  = Location.find.fetch("events").findList();//.where().eq("location.id",events.get(i).locationid).findList();
+    locs  = Ebean.find(Event.class)
+     .select("location.name, location.address, description, day, hours")
+     .where()
+     .eq("location.id", s.id)
+     .findList();
+    //Location.find.fetch("events").where().eq("location.id",events.get(i).locationid).findList();
     //Location.find.where().eq("location.id",events.get(i).locationid).findList();
     myeventloclist.add(locs);
   		//}
    }
-	
+	*/
 	//List<Location> locations  = Location.find.where().eq("events.locationid","locations.id").findList();
 	
 	//List<Location> locations = Location.find.fetch("events")
@@ -118,10 +134,10 @@ String globalusername="guest";
    User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){
-   return ok(views.html.index.render(myeventloclist,"",""));
+   return ok(views.html.index.render(events,"",""));
    }
    else{
-   	return ok(views.html.index.render(myeventloclist,usr.username,usr.role)); 
+   	return ok(views.html.index.render(events,usr.username,usr.role)); 
    	}
    /*	
     //String test = username+" test role:"+usr.role;

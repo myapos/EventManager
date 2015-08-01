@@ -13,13 +13,13 @@ public class Event extends Model {
 	@Column(name="id")
 	public int id;
 
-	@Column(name="id")
+	@Column(name="description")
 	public String description;
 	
-	@Column(name="id")
+	@Column(name="day")
 	public String day;
 	
-	@Column(name="id")
+	@Column(name="hours")
 	public String hours;
 	
 	@ManyToOne
