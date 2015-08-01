@@ -77,8 +77,8 @@ String globalusername="guest";
    List<Location> locations=Ebean.find(Location.class)
      .select("name, address, event.description, event.day, event.hours")
      .fetch("events")
-     .where()
-     .eq("id","events.locationid")
+     //.where()
+     //.eq("id","events.locationid")
      .findList();  
      
    /*  
@@ -327,7 +327,7 @@ String globalusername="guest";
 	String description;
    String day;
    String hours;
-   int locationid;
+   int location_id;
     
   
     User usr =User.find.where().eq("username", globalusername).findUnique();
@@ -346,11 +346,11 @@ String globalusername="guest";
         description = registerEventForm.get().description;
         day = registerEventForm.get().day;
         hours = registerEventForm.get().hours;
-        locationid = registerEventForm.get().locationid;
+        location_id = registerEventForm.get().location_id;
         
         try{
         // Create a new user and save it
-    	  new Event(description, day, hours, locationid).save();
+    	  new Event(description, day, hours, location_id).save();
         
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
@@ -445,7 +445,7 @@ String globalusername="guest";
     public String description;
     public String day;
     public String hours;
-    public int locationid;        
+    public int location_id;        
 
 	}		
 }

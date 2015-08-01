@@ -18,15 +18,15 @@ public class Event extends Model {
 	public String hours;
 	
 	@ManyToOne
-	public int locationid;
+	public int location_id;
 	
 	
-	public Event(String description, String day, String hours, int locationid){
+	public Event(String description, String day, String hours, int location_id){
 	
 	this.description=description;
 	this.day=day;
 	this.hours=hours;
-	this.locationid=locationid;
+	this.location_id=location_id;
 	
 	
 	}

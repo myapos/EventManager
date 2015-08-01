@@ -9,7 +9,6 @@ import javax.persistence.*;
 public class Event extends Model {
 
 	@Id
-	@Column(name="id")
 	public int id;
 
 	public String description;
@@ -19,7 +18,7 @@ public class Event extends Model {
 	public String hours;
 	
 	@ManyToOne
-	public int locationid;
+	public int location_id;
 	
 	
 	public Event(String description, String day, String hours, int locationid){
