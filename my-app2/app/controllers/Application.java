@@ -59,7 +59,9 @@ String globalusername="guest";
    //List<Event> events = Event.find.orderBy("day desc").findList();	   
    
    /**/
-   List<Event> events = Ebean.find(Event.class)  
+   List<Event> events = Ebean.find(Event.class)
+   		 .fetch("name")  
+   		 .fetch("address")    
    		.where().eq("event.locationid", "location.id")
    		.findList();
       
