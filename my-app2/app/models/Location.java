@@ -8,20 +8,27 @@ import models.Event;
 import java.util.List;
 
 @Entity
+@Table(name="location")
 public class Location extends Model {
 
 	@Id
+	@Column(name="id")
 	public int id;
 
+	@Column(name="name")
 	public String name;
 	
+	@Column(name="address")
 	public String address;
 	
+	@Column(name="latitude")
 	public String latitude;
-	
+
+	@Column(name="longitude")
 	public String longitude;
 	
-	@OneToMany(mappedBy = "locationid",cascade=CascadeType.ALL) 
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="locationid", referencedColumnName = "event.locationid") 
    public List<Event> events;
 	
 	public Location(String name, String address, String latitude, String longitude){
