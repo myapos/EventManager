@@ -9,8 +9,6 @@ import javax.persistence.*;
 public class Location extends Model {
 
 	@Id
-	@OneToOne
-   @JoinColumn(table = "event", referencedColumnName = "locationid")
 	public String id;
 
 	public String name;

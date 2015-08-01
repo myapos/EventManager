@@ -3,6 +3,7 @@ package models;
 import play.db.ebean.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Event extends Model {
@@ -16,6 +17,8 @@ public class Event extends Model {
 	
 	public String hours;
 	
+	@OneToMany
+   @JoinColumn(table = "location", referencedColumnName = "id")
 	public String locationid;
 	
 	

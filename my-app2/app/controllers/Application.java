@@ -56,11 +56,12 @@ String globalusername="guest";
    
    //List<Event> events = new Model.Finder(String.class, Event.class).all();  
    
-   //List<Event> events = Event.find.orderBy("day desc").findList();	   
+   List<Event> events = Event.find.orderBy("day desc").findList();	   
    
+   /*
    List<Event> events = Ebean.find(Event.class)  
    		.where().eq("event.locationid", "location.id")
-   		.findList();
+   		.findList();*/
       
    User usr =User.find.where().eq("username", globalusername).findUnique();
    
