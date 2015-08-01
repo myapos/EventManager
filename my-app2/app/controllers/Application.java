@@ -20,6 +20,8 @@ import java.util.List;
 
 import play.db.ebean.Model;
 
+import com.avaje.ebean.*;
+
 import static play.libs.Json.*;
 
 public class Application extends Controller {
@@ -56,7 +58,7 @@ String globalusername="guest";
    
    //List<Event> events = Event.find.orderBy("day desc").findList();	   
    
-   List<Event> events = Event.find
+   List<Event> events = Ebean.find(Event.class)  
    		.where().eq("event.locationid", "location.id")
    		.findList();
       
