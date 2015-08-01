@@ -350,8 +350,8 @@ String globalusername="guest";
         
         try{
         // Create a new user and save it
-    	  new Event(description, day, hours, location_id).save();
-        
+    	  Event event = new Event(description, day, hours, location_id);
+        Ebean.save(event);  
         /*session("username", loginForm.get().username);*/
         //return redirect(routes.Application.register(Form.form(RegisterUser.class), usr.username,usr.role));
         //return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
