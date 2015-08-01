@@ -60,7 +60,9 @@ String globalusername="guest";
 
 	//List<Location> locations  = Location.find.where().join("Event").where().eq("location.id","event.locationid").findList(); 
 	
-	List<Location> locations  = Location.find.where().eq("events.locationid","location.id").findList();
+	//List<Location> locations  = Location.find.where().eq("events.locationid","locations.id").findList();
+	
+	List<Location> locations  = Location.find.fetch("events").where().eq("events.locationid","locations.id").findList();
 	
 	//List<A> aList = A.find.where().join("AB").where().eq("AB.type", "3").findList();  
 	//A.find.where().eq("ab.type",3).findList()
@@ -80,10 +82,10 @@ String globalusername="guest";
    User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){
-   return ok(views.html.index.render(events,"",""));
+   return ok(views.html.index.render(locations,"",""));
    }
    else{
-   	return ok(views.html.index.render(events,usr.username,usr.role)); 
+   	return ok(views.html.index.render(locations,usr.username,usr.role)); 
    	}
    /*	
     //String test = username+" test role:"+usr.role;
