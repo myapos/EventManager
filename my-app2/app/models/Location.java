@@ -34,6 +34,16 @@ public class Location extends Model {
 	
 	}
 	
+	public Location(String name, String address, String latitude, String longitude,List<Event> events){
+	
+	this.name=name;
+	this.address=address;
+	this.latitude=latitude;
+	this.longitude=longitude;
+	this.events=events;
+	
+	}
+	
 	public static Model.Finder<String, Location> find = new Model.Finder(String.class, Location.class);
 	
 	/*
