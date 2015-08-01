@@ -75,7 +75,8 @@ String globalusername="guest";
 	for (int i=0; i< events.size(); i++) {
    test=events.get(i).locationid;
    //for (int j=0; j< locations.size(); j++) {
-    locs  = Location.find.where().eq("location.id",events.get(i).locationid).findList();
+    locs  = Location.find.fetch("events").where().eq("location.id",events.get(i).locationid).findList();
+    //Location.find.where().eq("location.id",events.get(i).locationid).findList();
     myeventloclist.add(locs);
   		//}
    }
