@@ -18,7 +18,7 @@ public class Event extends Model {
 	public String hours;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "location_id", referencedColumnName = "idcompany")
+	@JoinColumn(name = "location_id", referencedColumnName = "locationid")
 	public int location_id;
 	
 	
