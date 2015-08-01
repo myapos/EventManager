@@ -9,7 +9,6 @@ import javax.persistence.*;
 public class Event extends Model {
 
 	@Id
-	@Column(name="id")
 	public int id;
 
 	public String description;

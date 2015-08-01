@@ -6,20 +6,16 @@ import javax.persistence.Id;
 import javax.persistence.*;
 
 @Entity
-@Table(name="event")
 public class Event extends Model {
 
 	@Id
 	@Column(name="id")
 	public int id;
 
-	@Column(name="description")
 	public String description;
 	
-	@Column(name="day")
 	public String day;
 	
-	@Column(name="hours")
 	public String hours;
 	
 	@ManyToOne
