@@ -40,7 +40,7 @@
 						@for(location <- locations){
  						<li> @location.name @location.address 
  								@for(event <- location.events){
- 								@event
+ 								@event.locationid
  								}
  
  						</li>   
