@@ -37,7 +37,7 @@
 				<div class="latest-events">
 					<ul id="vertical-ticker">
 						@for(event <- events){
- 						<li> @event.day @event.description @event.hours @event.locationid</li>
+ 						<!--<li> @event.day @event.description @event.hours @event.locationid</li>-->   
     					}
 					</ul>
 			   </div>
