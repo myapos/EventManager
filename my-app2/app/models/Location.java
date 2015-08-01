@@ -44,6 +44,7 @@ public class Location extends Model {
 	
 	}
 	
+	
 	public static Model.Finder<String, Location> find = new Model.Finder(String.class, Location.class);
 	
 	/*

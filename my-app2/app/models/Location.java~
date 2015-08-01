@@ -40,7 +40,7 @@ public class Location extends Model {
 	this.address=address;
 	this.latitude=latitude;
 	this.longitude=longitude;
-	
+	this.events=events;
 	
 	}
 	
