@@ -26,7 +26,7 @@ public class Event extends Model {
 	//private Location location;
 	
 	@ManyToOne
-	@JoinColumn(name="location_id", referencedColumnName="id")
+	@JoinColumn(name="id", referencedColumnName="location_id")
   	private Location location;
 	
 	public Event(String description, String day, String hours, int location_id){
