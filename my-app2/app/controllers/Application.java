@@ -57,6 +57,7 @@ String globalusername="guest";
    //List<Event> events = Event.find.orderBy("day desc").findList();	   
    
    List<Event> events = Event.find
+   		.fetch("location")
    		.where().eq("event.locationid", "location.id")
    		.findList();
       
