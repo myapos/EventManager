@@ -64,8 +64,20 @@ String globalusername="guest";
 	
 	//List<Location> locations  = Location.find.where().eq("events.locationid","locations.id").findList();
 	
-	List<Location> locations = Ebean.find(Location.class).fetch("events").findList();  
-        
+	//List<Location> locations = Location.find.fetch("events")
+										//.where().eq("events.locationid",id).findList();  
+	
+	List<Location> locations =  Location.find.all(); 
+	
+	int i = 0;
+		while (i < locations.size()) {
+			locations.get(i).events;
+			i++;
+		}
+		
+   //User user = User.find.where().eq("email", email).findUnique();
+	//List<Question> usersQuestion = user.questions;
+	     
 	//List<Location> locations  = Location.find.fetch("events").where().eq("events.locationid","locations.id").findList();
 	
 	//List<A> aList = A.find.where().join("AB").where().eq("AB.type", "3").findList();  
