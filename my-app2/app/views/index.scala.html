@@ -62,7 +62,8 @@
 				<div id="map"></div>
 				<!--<script src="@routes.Assets.at("javascripts/my.js")"></script>-->
 				    
-<script type="text/javascript">				 
+<script type="text/javascript">		
+		 
 var locations = [
     @for((myevent, index) <- events.zipWithIndex) {
         	@if(index <= events.size-2) { 
@@ -89,6 +90,7 @@ var locations = [
  	  mapTypeControl: true,
  	  streetViewControl: true
 	 });
+	 /*
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
     var markers = new Array();
@@ -116,7 +118,7 @@ var locations = [
       //  Fit these bounds to the map
       map.fitBounds(bounds);
     }
-    AutoCenter();
+    AutoCenter();*/
 
 
 
