@@ -39,8 +39,20 @@ $(document).ready(function() {
  		events: [
         {
         
-        	@for((myevents, index) <- events.zipWithIndex) {
-   		 {tem @index is @myevents}
+        	@for((myevent, index) <- events.zipWithIndex) {
+        	@if(index < events.size-2) { 
+   		 		{
+   		      title  : @myevent.description,
+             	start  : @myevent.day_start,
+           	 	end    : @myevent.day_end
+   		 		},
+   		 } else(index ==events.size-1)
+   		 {		{
+   		      title  : @myevent.description,
+             	start  : @myevent.day_start,
+           	 	end    : @myevent.day_end
+           	 	}
+   		 }
 			}
         		/*
         		@for(myevent <- events){
