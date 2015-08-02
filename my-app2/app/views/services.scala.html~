@@ -1,5 +1,5 @@
-@(locations: List[Location], username: String, role:String)
-@main(title = "Services Page" , null, null) {
+@(locations: List[Location], username: String, role:String,events: List[Event])
+@main(title = "Services Page" , events, null) {
 
 <h1>Services page</h1>
 <p>Hello from Services Page</p>

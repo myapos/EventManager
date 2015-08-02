@@ -171,8 +171,14 @@ String globalusername="guest";
   List<Event> events = new Model.Finder(String.class, Event.class).all();
     	return ok(views.html.services.render(events,"",""));
   */  	
+   List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList(); 
   List<Location> locations = new Model.Finder(String.class, Location.class).all();
-    	return ok(views.html.services.render(locations,"","",null));  	
+    	return ok(views.html.services.render(locations,"","",events));  	
   }
   /*
   public Result services() {
