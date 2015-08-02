@@ -71,13 +71,13 @@ var locations = [
       @for((myevent, index) <- events.zipWithIndex) {
     		
 			@if(index <= events.size-2){
-       		 {
+       		 
            	 	['@myevent.location.name', @myevent.location.latitude ,@myevent.location.longitude],
-       		 },
+       		,
        	} else {
-       			{
-           	 	['@myevent.location.name', @myevent.location.latitude ,@myevent.location.longitude],
-       		 }
+       			
+           	 	['@myevent.location.name', @myevent.location.latitude ,@myevent.location.longitude]
+       		
        	
        	}
         
