@@ -50,13 +50,13 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
         	@if(index <= events.size-2) { 
    		 		{
    		      ['@myevent.description',
-             	 @event.location.latitude,
-           	 	 @event.location.longitude]
+             	 @myevent.location.latitude,
+           	 	 @myevent.location.longitude]
    		 		},} else{		
    		 			{
    		      		['@myevent.description',
-             			 @event.location.latitude,
-           	 			 @event.location.longitude]
+             			 @myevent.location.latitude,
+           	 			 @myevent.location.longitude]
            	 		}
    		 		 }
 			}
