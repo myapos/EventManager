@@ -34,8 +34,9 @@ $("#vertical-ticker").totemticker({
 		mousestop:true, // Stop while mouse is hovers over it
 		speed: 800, // Speed of transition animation (ms)
 		interval: 3000, // Time between change (ms)
-		max_items: 3 // Maximum items to display 
+		max_items: 4 // Maximum items to display 
 });
+
 
 });
 </script>  
