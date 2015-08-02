@@ -6,11 +6,11 @@ var locations = [
     		
 			@if(index <= events.size-2){
        		 {
-           	 	['@event.location.name', @event.location.latitude ,@event.location.longitude],
+           	 	['@myevent.location.name', @myevent.location.latitude ,@myevent.location.longitude],
        		 },
        	} else {
        			{
-           	 	['@event.location.name', @event.location.latitude ,@event.location.longitude],
+           	 	['@myevent.location.name', @myevent.location.latitude ,@myevent.location.longitude],
        		 }
        	
        	}
