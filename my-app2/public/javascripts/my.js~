@@ -64,6 +64,7 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
     var myLatlng = new google.maps.LatLng(35.3220164, 25.1350708);
 	 var element = document.getElementById("map");
  
+ 	/*
 	var map = new google.maps.Map(element, {
  	  center: myLatlng,
  	  zoom: 13,
@@ -102,7 +103,7 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
 
 
 
-
+*/
 
 
 
