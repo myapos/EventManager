@@ -1,0 +1,74 @@
+SELECT event.id, event.description, event.day,event.hours, location.name, location.address
+FROM event
+INNER JOIN location
+ON event.locationid=location.id;
+
+SELECT event.id, event.description, event.day,event.hours, location.name, location.address
+FROM event
+INNER JOIN location
+ON event.locationid=location.id;
+
+
+					<ul id="vertical-ticker">
+					<!--
+						@for(event <- events){
+ 						<li> @event.day @event.description @event.hours @event.locationid</li>   
+    					}-->
+					</ul>
+					
+					
+					
+@for(event <- location.events)
+ 							{@event.description @event.day @event.hours} 
+ 							
+ 							@for(event <- location.events){
+ 								@event.description
+ 								@event.day
+ 								@event.hours
+ 								
+ 								}
+ 								
+ 								
+ 								
+ 		@location.events.description 
+ 						@location.events.day 
+ 						@location.events.hours 						
+ 								
+ 								@for(location <- locations){
+ 						<li> @location.name @location.address 
+ 								@for(event <- location.events){
+ 								@event.locationid
+ 								}
+ 
+ 						</li>   
+    					}
+    					
+    					
+ @for(location <- locations){
+ 						<li> @location.name @location.address 
+ 						@for(event <- location.events){ 
+ 								@event.description
+ 								@event.day
+ 								@event.hours
+ 						}
+ 						</li>   
+    					}
+    					
+    					
+@for(location <- locations){
+ 						<li> 	@location.name @location.address
+ 								@for(event <- location.events){ 
+ 										@event.description
+ 										@event.day
+ 										@event.hours
+ 									}
+ 						</li>   
+    					}	
+    					
+@for(event <- events){
+ 						<li> @event.description	@event.day_start - @event.day_end @event.hours 
+ 						@event.location.name @event.location.address	
+ 						</li>   
+    					}	    					
+    					
+ 

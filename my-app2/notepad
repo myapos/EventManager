@@ -70,5 +70,20 @@ ON event.locationid=location.id;
  						@event.location.name @event.location.address	
  						</li>   
     					}	    					
-    					
+ var locations = [
+      @for((myevent, index) <- events.zipWithIndex) {
+    		
+			@if(index <= events.size-2){
+       		 {
+           	 	['@event.location.name', @event.location.latitude ,@event.location.longitude],
+       		 },
+       	} else {
+       			{
+           	 	['@event.location.name', @event.location.latitude ,@event.location.longitude],
+       		 }
+       	
+       	}
+        
+        }
+    ];   					
  
