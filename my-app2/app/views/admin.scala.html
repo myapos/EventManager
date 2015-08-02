@@ -1,5 +1,5 @@
-@(form1: Form[Application.RegisterLocation],form2: Form[Application.RegisterEvent],locations: List[Location], username: String, role:String)
-@main(title = "Admin Area" , null, null) {
+@(form1: Form[Application.RegisterLocation],form2: Form[Application.RegisterEvent],locations: List[Location], username: String, role:String,user: User,events: List[Event])
+@main(title = "Admin Area" , user, events) {
 
 <div class="row"> 
 	<div class="col-xs-4 welcome-msg"> </div>
