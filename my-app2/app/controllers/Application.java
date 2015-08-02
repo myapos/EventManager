@@ -394,7 +394,7 @@ String globalusername="guest";
      //.eq("id","events.locationid")
      .findList();  
      
-    return ok(login.render(Form.form(Login.class),events));
+    return ok(login.render(Form.form(Login.class),null));
   }
   /**/
   public Result logout() {

@@ -387,7 +387,14 @@ String globalusername="guest";
   }
   
   public Result login() {
-    return ok(login.render(Form.form(Login.class),null));
+  	List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList();  
+     
+    return ok(login.render(Form.form(Login.class),events));
   }
   /**/
   public Result logout() {
