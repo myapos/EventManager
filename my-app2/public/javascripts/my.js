@@ -1,18 +1,15 @@
 $(document).ready(function() {
 
-alert("Helo from external jquery script");
+//alert("Helo from external jquery script");
 var locations = [
       @for((myevent, index) <- events.zipWithIndex) {
     		
 			@if(index <= events.size-2){
-       		 {
-           	 	['@myevent.location.name', @myevent.location.latitude ,@myevent.location.longitude],
-       		 },
+       		 
+           	 	['@myevent.location.name @myevent.description', @myevent.location.latitude ,@myevent.location.longitude],
+       		
        	} else {
-       			{
-           	 	['@myevent.location.name', @myevent.location.latitude ,@myevent.location.longitude],
-       		 }
-       	
+           	 	['@myevent.location.name @myevent.description', @myevent.location.latitude ,@myevent.location.longitude]	
        	}
         
         }
@@ -78,9 +75,7 @@ map.mapTypes.set("OSM", new google.maps.ImageMapType({
  name: "OpenStreetMap",
  maxZoom: 18
 }));
-alert("Helo from external jquery script");
+//alert("Helo from external jquery script");
 
 
 });
- 
- 
