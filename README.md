@@ -20,7 +20,7 @@ Calendar: FullCalendar http://fullcalendar.io/
 Rotating text: totemticker http://buildinternet.com/project/totem/ 
 Maps: Google Map API to import OpenStreetMaps http://www.w3schools.com/googleapi/  http://wiki.openstreetmap.org/wiki/Google_Maps_Example 
 
-This is a project for the purposes of code school 2 that took place in Computer Science Department of University Of Crete www.csd.uoc.gr and Monades Aristeias Logismikou http://ma.ellak.gr/
+This is a project for the purposes of code school 3 that took place in Computer Science Department of University Of Crete www.csd.uoc.gr and Monades Aristeias Logismikou http://ma.ellak.gr/
 
 Apostolakis Myron - Koutsogiannaki Maria
 
