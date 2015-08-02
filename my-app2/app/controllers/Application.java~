@@ -459,8 +459,8 @@ String globalusername="guest";
   public static class RegisterEvent {
 
     public String description;
-    public String dayStart;
-    public String dayEnd;
+    public String day_start;
+    public String day_end;
     public String hours;
     public int location_id;        
 

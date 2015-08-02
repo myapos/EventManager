@@ -76,7 +76,7 @@ String globalusername="guest";
      */
    
    List<Event> events=Ebean.find(Event.class)
-     .select("description, day, hours")
+     .select("description, day_start, day_start, hours")
      .fetch("location")
      //.where()
      //.eq("id","events.locationid")
