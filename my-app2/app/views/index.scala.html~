@@ -39,8 +39,7 @@
 					<!-- -->
 					@for(event <- events){
  						<li> @event.description	@event.day_start - @event.day_end @event.hours 
- 						@event.location.name @event.location.address
- 								
+ 						@event.location.name @event.location.address	
  						</li>   
     					}	
 				</ul>
