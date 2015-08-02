@@ -172,7 +172,7 @@ String globalusername="guest";
     	return ok(views.html.services.render(events,"",""));
   */  	
   List<Location> locations = new Model.Finder(String.class, Location.class).all();
-    	return ok(views.html.services.render(locations,"",""));  	
+    	return ok(views.html.services.render(locations,"","",null));  	
   }
   /*
   public Result services() {
@@ -196,7 +196,7 @@ String globalusername="guest";
   }
   
   public Result contact() {
-    return ok(views.html.contact.render());
+    return ok(views.html.contact.render(null,null));
   }
   
   public Result register() {
@@ -204,10 +204,10 @@ String globalusername="guest";
   	 
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.register.render(Form.form(RegisterUser.class),"",""));
+   return ok(views.html.register.render(Form.form(RegisterUser.class),"","",null,null));
    }
    else{
-   	return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role)); 
+   	return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role,null,null)); 
    }
     //return ok(views.html.register.render());
   }
@@ -227,7 +227,7 @@ String globalusername="guest";
     
     if (registerForm.hasErrors()) 
     {
-        return badRequest(register.render(registerForm,usr.username,usr.role));
+        return badRequest(register.render(registerForm,usr.username,usr.role,null,null));
     } 
     else 
     {
@@ -383,7 +383,7 @@ String globalusername="guest";
 	}   	
    	
   public Result links() {
-    return ok(views.html.links.render());
+    return ok(views.html.links.render(null,null));
   }
   
   public Result login() {

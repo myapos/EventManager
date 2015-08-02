@@ -1,5 +1,5 @@
-@(form: Form[Application.RegisterUser], username: String, role:String)
-@main(title = "Register Page", null) {
+@(form: Form[Application.RegisterUser], username: String, role:String,events: List[Event],user: User)
+@main(title = "Register Page", user, events) {
 <div class="col-xs-12 welcome-msg">
         
       @role match {   
