@@ -1,4 +1,4 @@
-@(title: String, user: User)(content: Html)
+@(title: String, user: User,events: List[Event])(content: Html)
 <!DOCTYPE html>
 <html lang="el">
   <head>
