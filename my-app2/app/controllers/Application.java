@@ -41,7 +41,15 @@ String globalusername="guest";
  */  
   public Result myName(String name) {
     //return ok("Hello " + name);
-    return ok(views.html.myname.render(name));
+    List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList(); 
+     User usr =User.find.where().eq("username", globalusername).findUnique();
+     
+    return ok(views.html.myname.render(name,usr,events));
   }
   
   
@@ -215,12 +223,19 @@ String globalusername="guest";
   public Result register() {
   	User usr =User.find.where().eq("username", globalusername).findUnique();
   	 
+  	List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList(); 
+     
     //return ok(views.html.admin.render());
    if(usr==null){
-   return ok(views.html.register.render(Form.form(RegisterUser.class),"","",null,null));
+   return ok(views.html.register.render(Form.form(RegisterUser.class),"","",usr,events));
    }
    else{
-   	return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role,null,null)); 
+   	return ok(views.html.register.render(Form.form(RegisterUser.class),usr.username,usr.role,usr,events)); 
    }
     //return ok(views.html.register.render());
   }
@@ -235,12 +250,18 @@ String globalusername="guest";
     String role="user";
   
     User usr =User.find.where().eq("username", globalusername).findUnique();
-  	
+    List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList();   	 
+  	 
     Form<RegisterUser> registerForm = Form.form(RegisterUser.class).bindFromRequest();
     
     if (registerForm.hasErrors()) 
     {
-        return badRequest(register.render(registerForm,usr.username,usr.role,null,null));
+        return badRequest(register.render(registerForm,usr.username,usr.role,usr,events));
     } 
     else 
     {
@@ -396,7 +417,15 @@ String globalusername="guest";
 	}   	
    	
   public Result links() {
-    return ok(views.html.links.render(null,null));
+  		List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList(); 
+     User usr =User.find.where().eq("username", globalusername).findUnique();
+     
+    return ok(views.html.links.render(usr,events));
   }
   
   public Result login() {
@@ -406,8 +435,9 @@ String globalusername="guest";
      //.where()
      //.eq("id","events.locationid")
      .findList();  
+     User usr =User.find.where().eq("username", globalusername).findUnique();
      
-    return ok(login.render(Form.form(Login.class),null));
+    return ok(login.render(Form.form(Login.class),usr,events));
   }
   /**/
   public Result logout() {
@@ -418,12 +448,19 @@ String globalusername="guest";
   }
   
   public Result authenticate() {
-  	
+  	List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList();  
+     User usr =User.find.where().eq("username", globalusername).findUnique();
+     
   	Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
     
     if (loginForm.hasErrors()) 
     {
-        return badRequest(login.render(loginForm,null));
+        return badRequest(login.render(loginForm,usr,events));
     } 
     else 
     {

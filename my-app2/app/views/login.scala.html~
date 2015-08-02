@@ -1,5 +1,5 @@
-@(form: Form[Application.Login],events: List[Event])
-@main(title = "Login Page", null, events=null) {
+@(form: Form[Application.Login], user: User, events: List[Event])
+@main(title = "Login Page", null, events) {
 <div class="my-form-container">
 @helper.form(routes.Application.authenticate, 'role -> "form", 'id -> "login-form") {
    <h1>Please sign in</h1>

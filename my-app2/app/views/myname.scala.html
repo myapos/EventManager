@@ -1,5 +1,5 @@
-@(name: String)
-@main(title = "myName", null, null) {
+@(name: String, user: User,events: List[Event])
+@main(title = "myName", user, events) {
 
 <h1>myName page</h1>
 <p>Hello @name</p>
