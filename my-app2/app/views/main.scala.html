@@ -31,6 +31,49 @@ $('#calendar').fullCalendar({
         /*dayClick: function() {
         alert('a day has been clicked!');
     }*/
+    
+    
+    
+	
+	events: [
+        
+        @for((myevent, index) <- events.zipWithIndex) {
+    		
+			@if(index <= events.size-2){
+       		 {
+           	 	title  : '@myevent.description',
+           	 	start  : '@myevent.day_start',
+            	end    : '@myevent.day_end'
+       		 },
+       	} else {
+       			{
+           	 	title  : '@myevent.description',
+           	 	start  : '@myevent.day_start',
+            	end    : '@myevent.day_end'
+       		 }
+       	
+       	}
+        
+        }
+    ],
+    eventClick: function(calEvent, jsEvent, view) {
+
+        alert('Event: ' + calEvent.title);
+        //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        //alert('View: ' + view.name);
+
+        // change the border color just for fun
+        $(this).css('border-color', 'yellow');
+
+    },
+    
+    header:{
+    left:   'title',
+    center: '',
+    right:  'today month agendaWeek agendaDay prev,next'
+    }
+	
+    /*
     events: [
         {
             title  : 'event1',
@@ -53,7 +96,7 @@ $('#calendar').fullCalendar({
     center: '',
     right:  'today month agendaWeek agendaDay prev,next'
     }
-    /**/
+    */
     });
 
 
