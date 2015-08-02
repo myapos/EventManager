@@ -40,10 +40,10 @@
 					@for(location <- locations){
  						<li> 	@location.name @location.address @location.events
  								@for(event <- location.events){ 
- 								@event.description
- 								@event.day
- 								@event.hours
- 						}
+ 										@event.description
+ 										@event.day
+ 										@event.hours
+ 									}
  						</li>   
     					}	
 				</ul>
