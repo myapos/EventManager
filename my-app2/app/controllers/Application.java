@@ -387,7 +387,7 @@ String globalusername="guest";
   }
   
   public Result login() {
-    return ok(login.render(Form.form(Login.class)));
+    return ok(login.render(Form.form(Login.class),null));
   }
   /**/
   public Result logout() {
@@ -403,7 +403,7 @@ String globalusername="guest";
     
     if (loginForm.hasErrors()) 
     {
-        return badRequest(login.render(loginForm));
+        return badRequest(login.render(loginForm,null));
     } 
     else 
     {
