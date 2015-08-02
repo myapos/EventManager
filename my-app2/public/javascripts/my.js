@@ -36,7 +36,6 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
       ['Plateia Eleutherias', 35.3380048,25.1359151, 1]
     ];*/
  
- 
  var locations = [
       ['Androgeo', 35.339409,25.1343932],
       ['Kipotheatro Kazantzakis', 35.332105, 25.131702],
@@ -44,27 +43,9 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
       ['Pili Bitouri', 35.334279,25.1347117],
       ['Plateia Eleutherias', 35.3380048,25.1359151]
     ];
-    /*
-    var locations = [
-    @for((myevent, index) <- events.zipWithIndex) {
-        	@if(index <= events.size-2) { 
-   		 		{
-   		      ['@myevent.description',
-             	 @myevent.location.latitude,
-           	 	 @myevent.location.longitude]
-   		 		},} else{		
-   		 			{
-   		      		['@myevent.description',
-             			 @myevent.location.latitude,
-           	 			 @myevent.location.longitude]
-           	 		}
-   		 		 }
-			}
-    ];*/
     var myLatlng = new google.maps.LatLng(35.3220164, 25.1350708);
 	 var element = document.getElementById("map");
  
- 	/*
 	var map = new google.maps.Map(element, {
  	  center: myLatlng,
  	  zoom: 13,
@@ -103,7 +84,7 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
 
 
 
-*/
+
 
 
 
