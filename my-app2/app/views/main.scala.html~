@@ -40,7 +40,7 @@ $(document).ready(function() {
         {
         
         	@for((myevent, index) <- events.zipWithIndex) {
-        	@if(index < events.size-2) { 
+        	@if(index <= events.size-2) { 
    		 		{
    		      title  : @myevent.description,
              	start  : @myevent.day_start,
@@ -52,7 +52,7 @@ $(document).ready(function() {
              			start  : @myevent.day_start,
            	 			end    : @myevent.day_end
            	 		}
-   		 }
+   		 		 }
 			}
         }						
  		],
