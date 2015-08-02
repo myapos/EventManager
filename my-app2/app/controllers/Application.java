@@ -75,9 +75,9 @@ String globalusername="guest";
      
      */
    
-   List<Location> locations=Ebean.find(Location.class)
-     .select("name, address")
-     .fetch("events")
+   List<Event> events=Ebean.find(Event.class)
+     .select("description, day, hours")
+     .fetch("location")
      //.where()
      //.eq("id","events.locationid")
      .findList();  
@@ -152,10 +152,10 @@ String globalusername="guest";
    User usr =User.find.where().eq("username", globalusername).findUnique();
    
    if(usr==null){
-   return ok(views.html.index.render(locations,"",""));
+   return ok(views.html.index.render(events,"",""));
    }
    else{
-   	return ok(views.html.index.render(locations,usr.username,usr.role)); 
+   	return ok(views.html.index.render(events,usr.username,usr.role)); 
    	}
    /*	
     //String test = username+" test role:"+usr.role;
