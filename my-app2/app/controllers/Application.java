@@ -347,10 +347,14 @@ String globalusername="guest";
         day = registerEventForm.get().day;
         hours = registerEventForm.get().hours;
         location_id = registerEventForm.get().location_id;
+        Location locat = Location.find.where().eq("id", location_id).findUnique();
         
         try{
+        	
         // Create a new user and save it
-    	  Event event = new Event(description, day, hours, location_id);
+    	  Event event = new Event(description, day, hours,locat);//, location_id);
+    	  
+    	  //event.setLocation(locat);
     	  //locations.get(locations.size() - 1).events.add(event);
         //Ebean.save(locations); 
         Ebean.save(event); 

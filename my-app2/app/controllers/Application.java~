@@ -327,7 +327,7 @@ String globalusername="guest";
 	String description;
    String day;
    String hours;
-   //int location_id;
+   int location_id;
     
   
     User usr =User.find.where().eq("username", globalusername).findUnique();
@@ -350,7 +350,9 @@ String globalusername="guest";
         
         try{
         // Create a new user and save it
-    	  Event event = new Event(description, day, hours, location_id);
+    	  Event event = new Event(description, day, hours);//, location_id);
+    	  Location locat = Location.find.where().eq("id", location_id).findUnique();
+    	  event.setLocation(locat);
     	  //locations.get(locations.size() - 1).events.add(event);
         //Ebean.save(locations); 
         Ebean.save(event); 

@@ -27,7 +27,7 @@ public class Event extends Model {
 	
 	@ManyToOne
 	@JoinColumn(name="location_id")
-	private Location location;
+	public Location location;
 	//int location_id;
   	//private Location location;
 	
@@ -36,7 +36,7 @@ public class Event extends Model {
 	this.description=description;
 	this.day=day;
 	this.hours=hours;
-	//this.location_id=location_id;
+	this.location_id=location_id;
 	
 	
 	}
