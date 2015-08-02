@@ -14,7 +14,9 @@ public class Event extends Model {
 
 	public String description;
 	
-	public String day;
+	public String dayStart;
+	
+	public String dayEnd;
 	
 	public String hours;
 	
@@ -31,12 +33,12 @@ public class Event extends Model {
 	//int location_id;
   	//private Location location;
 	
-	public Event(String description, String day, String hours){//, int location_id){
+	public Event(String description, String day, String hours, Location locat){
 	
 	this.description=description;
 	this.day=day;
 	this.hours=hours;
-	this.location_id=location_id;
+	this.location=locat;
 	
 	
 	}

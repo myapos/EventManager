@@ -75,8 +75,12 @@
       	<!--<input type="text" class="form-control" name="description" id="description" placeholder="description">-->
       </div>
    	<div class="form-group">
-    		<label for="day">Day (YYYY-mm-dd):</label>
-      	<input type="date" class="form-control" name="day" id="day" placeholder="day">
+    		<label for="dayStart">Starts (YYYY-mm-dd):</label>
+      	<input type="date" class="form-control" name="dayStart" id="dayStart" placeholder="dayStart">
+      </div>
+      <div class="form-group">
+    		<label for="dayEnd">Ends (YYYY-mm-dd):</label>
+      	<input type="date" class="form-control" name="dayEnd" id="dayEnd" placeholder="dayEnd">
       </div>
       <div class="form-group">
     		<label for="hours">Hours:</label>
