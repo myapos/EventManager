@@ -90,7 +90,7 @@ $(document).ready(function() {
     right:  'today month agendaWeek agendaDay prev,next'
     }*/
 
-    });*/
+    //});
   
  $("#vertical-ticker").totemticker({
 		row_height:'100px', // Height of each ticker row in PX

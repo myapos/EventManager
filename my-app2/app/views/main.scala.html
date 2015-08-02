@@ -26,71 +26,14 @@ $(document).ready(function() {
 
 
     // page is now ready, initialize the calendar...
-/*
+
     $('#calendar').fullCalendar({
 
            
  		 
- 		events: [
+ 		
 
-        	@for((myevent, index) <- events.zipWithIndex) {
-        	@if(index <= events.size-2) { 
-   		 		{
-   		      title  : '@myevent.description',
-             	start  : '@myevent.day_start',
-           	 	end    : '@myevent.day_end'
-   		 		},} else{		
-   		 			{
-   		      		title  : '@myevent.description',
-             			start  : '@myevent.day_start',
-           	 			end    : '@myevent.day_end'
-           	 		}
-   		 		 }
-			}
-        					
- 		],eventClick: function(calEvent, jsEvent, view) {
-
-        alert('Event: ' + calEvent.title);
-        //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-        //alert('View: ' + view.name);
-
-        // change the border color just for fun
-        $(this).css('border-color', 'yellow');
-
-    },
-    
-    header:{
-    left:   'title',
-    center: '',
-    right:  'today month agendaWeek agendaDay prev,next'
-    }   
-    */
-  /*
-    events: [
-        {
-            title  : 'event1',
-            start  : '2015-07-12',
-            end    : '2015-07-12'
-        },
-        {
-            title  : 'event2',
-            start  : '2015-07-22',
-            end    : '2015-07-26'
-        },
-        {
-            title  : 'event3',
-            start  : '2015-07-09T12:30:00',
-            allDay : false // will make the time show
-        }
-    ],
-    
-    header:{
-    left:   'title',
-    center: '',
-    right:  'today month agendaWeek agendaDay prev,next'
-    }*/
-
-    //});
+    });
   
  $("#vertical-ticker").totemticker({
 		row_height:'100px', // Height of each ticker row in PX
