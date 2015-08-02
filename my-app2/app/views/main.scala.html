@@ -25,7 +25,17 @@
 $(document).ready(function() {
 
 
-
+$("#vertical-ticker").totemticker({
+		row_height:'100px', // Height of each ticker row in PX
+		next:'#ticker-next', // ID of next button or link
+		previous:'#ticker-previous', // ID of previous button or link
+		stop:'#stop', // ID of stop button or link
+		start:'#start', // ID of start button or link
+		mousestop:true, // Stop while mouse is hovers over it
+		speed: 800, // Speed of transition animation (ms)
+		interval: 3000, // Time between change (ms)
+		max_items: 3 // Maximum items to display 
+});
 
 });
 </script>  
