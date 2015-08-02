@@ -47,7 +47,7 @@
 		}
 		@if(flash.contains("error")) {
     	<p class="error">
-     	   @flash.get("success")
+     	   @flash.get("error")
     	</p>
 		}
 		@if(flash.contains("success")) {

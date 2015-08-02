@@ -1,4 +1,4 @@
-@main(title = "Links") {
+@main(title = "Links", null) {
 
 <h1>Useful Links</h1>
     <div class="list-group">

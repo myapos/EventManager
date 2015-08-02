@@ -82,6 +82,10 @@ text-align: center;
 .latest-events-container{
 text-align: center;
 }
+.latest-events{
+font-size: 100%;
+}
+
 #search-form{
 text-align: center;
 margin-top:10px;
@@ -119,7 +123,7 @@ color: red;
 }
 
 .welcome-msg{
-text-align: right;
+text-align: justify;
 }	
 
 .my-form-container{

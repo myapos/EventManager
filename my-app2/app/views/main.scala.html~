@@ -1,4 +1,4 @@
-@(title: String, user: User)(content: Html)
+@(title: String, user: User,events: List[Event])(content: Html)
 <!DOCTYPE html>
 <html lang="el">
   <head>
@@ -33,11 +33,25 @@ $(document).ready(function() {
         /*dayClick: function() {
         alert('a day has been clicked!');
     }*/
+    
+    
+ 		 
+ 		events: [
+        {
+        		@for(event <- events){
+          	 	title  : @event.description,
+             	start  : @event.day_start,
+           	 	end    : @event.day_end
+         	}   
+        }						
+ 		   
+    			
+    /*
     events: [
         {
             title  : 'event1',
             start  : '2015-07-12',
-            end    : '2015-07-26'
+            end    : '2015-07-12'
         },
         {
             title  : 'event2',
@@ -55,7 +69,7 @@ $(document).ready(function() {
     left:   'title',
     center: '',
     right:  'today month agendaWeek agendaDay prev,next'
-    }
+    }*/
     /**/
     });
   

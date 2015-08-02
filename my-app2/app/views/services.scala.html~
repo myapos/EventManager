@@ -15,7 +15,7 @@
 <label for="location">Location:</label>
 <select class="form-control" class="form-control" name="location" id="location" placeholder="location">
 @for(location <- locations){
- <option>@location.id @location.name  @location.address @location.latitude @location.longitude</option>   
+ <option value=@location.id>@location.id @location.name  @location.address @location.latitude @location.longitude</option>   
     
 }
 </select> 

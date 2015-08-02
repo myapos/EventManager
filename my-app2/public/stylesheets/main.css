@@ -82,6 +82,10 @@ text-align: center;
 .latest-events-container{
 text-align: center;
 }
+.latest-events{
+font-size: 50%;
+}
+
 #search-form{
 text-align: center;
 margin-top:10px;
