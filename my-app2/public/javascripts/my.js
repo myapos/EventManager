@@ -2,18 +2,19 @@ $(document).ready(function() {
 
 alert("Helo from external jquery script");
 
-var map = new OpenLayers.Map('map', {
-    projection: new OpenLayers.Projection('EPSG:900913')
+var map = new ol.Map({
+    target: 'map',
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.MapQuest({layer: 'sat'})
+      })
+    ],
+    view: new ol.View({
+      center: ol.proj.transform([37.41, 8.82], 'EPSG:4326', 'EPSG:3857'),
+      zoom: 4
+    })
   });
-  var osm = new OpenLayers.Layer.OSM();            
-  var gmap = new OpenLayers.Layer.Google('Google street maps');
-  
- 
-  map.addLayers([osm, gmap]);
-  map.setCenter(new OpenLayers.LonLat(2.2, 54.0)
-    .transform(new OpenLayers.Projection('EPSG:4326'), map.getProjectionObject()), 5);
-  map.addControl(new OpenLayers.Control.LayerSwitcher());
-
+alert("Helo from external jquery script");
 });
  
  
