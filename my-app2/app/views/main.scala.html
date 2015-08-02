@@ -29,10 +29,33 @@ $(document).ready(function() {
 
     $('#calendar').fullCalendar({
 
-           
- 		 
- 		
-
+        // put your options and callbacks here
+        /*dayClick: function() {
+        alert('a day has been clicked!');
+    }*/
+    events: [
+        {
+            title  : 'event1',
+            start  : '2015-07-12'
+        },
+        {
+            title  : 'event2',
+            start  : '2015-07-22',
+            end    : '2015-07-26'
+        },
+        {
+            title  : 'event3',
+            start  : '2015-07-09T12:30:00',
+            allDay : false // will make the time show
+        }
+    ],
+    
+    header:{
+    left:   'title',
+    center: '',
+    right:  'today month agendaWeek agendaDay prev,next'
+    }
+    /**/
     });
   
  $("#vertical-ticker").totemticker({
@@ -44,7 +67,7 @@ $(document).ready(function() {
 		mousestop:true, // Stop while mouse is hovers over it
 		speed: 800, // Speed of transition animation (ms)
 		interval: 3000, // Time between change (ms)
-		max_items: 5 // Maximum items to display 
+		max_items: 3 // Maximum items to display 
 });
 
 

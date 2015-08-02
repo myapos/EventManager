@@ -1,4 +1,4 @@
-@(title: String, user: User,events: List[Event])(content: Html)
+@(title: String, user: User)(content: Html)
 <!DOCTYPE html>
 <html lang="el">
   <head>
@@ -26,51 +26,17 @@ $(document).ready(function() {
 
 
     // page is now ready, initialize the calendar...
-/*
+
     $('#calendar').fullCalendar({
 
-           
- 		 
- 		events: [
-
-        	@for((myevent, index) <- events.zipWithIndex) {
-        	@if(index <= events.size-2) { 
-   		 		{
-   		      title  : '@myevent.description',
-             	start  : '@myevent.day_start',
-           	 	end    : '@myevent.day_end'
-   		 		},} else{		
-   		 			{
-   		      		title  : '@myevent.description',
-             			start  : '@myevent.day_start',
-           	 			end    : '@myevent.day_end'
-           	 		}
-   		 		 }
-			}
-        					
- 		],eventClick: function(calEvent, jsEvent, view) {
-
-        alert('Event: ' + calEvent.title);
-        //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-        //alert('View: ' + view.name);
-
-        // change the border color just for fun
-        $(this).css('border-color', 'yellow');
-
-    },
-    
-    header:{
-    left:   'title',
-    center: '',
-    right:  'today month agendaWeek agendaDay prev,next'
-    }   
-    */
-  /*
+        // put your options and callbacks here
+        /*dayClick: function() {
+        alert('a day has been clicked!');
+    }*/
     events: [
         {
             title  : 'event1',
-            start  : '2015-07-12',
-            end    : '2015-07-12'
+            start  : '2015-07-12'
         },
         {
             title  : 'event2',
@@ -88,9 +54,9 @@ $(document).ready(function() {
     left:   'title',
     center: '',
     right:  'today month agendaWeek agendaDay prev,next'
-    }*/
-
-    //});
+    }
+    /**/
+    });
   
  $("#vertical-ticker").totemticker({
 		row_height:'100px', // Height of each ticker row in PX
@@ -101,7 +67,7 @@ $(document).ready(function() {
 		mousestop:true, // Stop while mouse is hovers over it
 		speed: 800, // Speed of transition animation (ms)
 		interval: 3000, // Time between change (ms)
-		max_items: 5 // Maximum items to display 
+		max_items: 3 // Maximum items to display 
 });
 
 
