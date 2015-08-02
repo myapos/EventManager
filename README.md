@@ -14,7 +14,7 @@ The web application EventManager is an appropriate web application where visitor
 11.	MySQL https://www.mysql.com/
 
 
-Finally we used the some following JQuery open source plugins
+Finally we used the following JQuery open source plugins
 
 Calendar: FullCalendar http://fullcalendar.io/
 Rotating text: totemticker http://buildinternet.com/project/totem/ 
