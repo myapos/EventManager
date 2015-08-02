@@ -333,8 +333,8 @@ String globalusername="guest";
   public Result registerEvent() {
 	
 	String description;
-   String dayStart;
-   String dayEnd;
+   String day_start;
+   String day_end;
    String hours;
    int location_id;
     
@@ -353,8 +353,8 @@ String globalusername="guest";
         //session().clear();
         //session("email", loginForm.get().email);
         description = registerEventForm.get().description;
-        dayStart = registerEventForm.get().dayStart;
-        dayEnd = registerEventForm.get().dayEnd;
+        day_start = registerEventForm.get().day_start;
+        day_end = registerEventForm.get().day_end;
         hours = registerEventForm.get().hours;
         location_id = registerEventForm.get().location_id;
         Location locat = Location.find.where().eq("id", location_id).findUnique();
@@ -362,7 +362,7 @@ String globalusername="guest";
         try{
         	
         // Create a new user and save it
-    	  Event event = new Event(description, dayStart, dayEnd, hours,locat);//, location_id);
+    	  Event event = new Event(description, day_start, day_end, hours,locat);//, location_id);
     	  
     	  //event.setLocation(locat);
     	  //locations.get(locations.size() - 1).events.add(event);
@@ -459,8 +459,8 @@ String globalusername="guest";
   public static class RegisterEvent {
 
     public String description;
-    public String dayStart;
-    public String dayEnd;
+    public String day_start;
+    public String day_end;
     public String hours;
     public int location_id;        
 
