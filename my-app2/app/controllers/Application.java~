@@ -178,7 +178,7 @@ String globalusername="guest";
      //.eq("id","events.locationid")
      .findList(); 
   List<Location> locations = new Model.Finder(String.class, Location.class).all();
-    	return ok(views.html.services.render(locations,"","",null));  	
+    	return ok(views.html.services.render(locations,"","",events));  	
   }
   /*
   public Result services() {
@@ -202,7 +202,14 @@ String globalusername="guest";
   }
   
   public Result contact() {
-    return ok(views.html.contact.render(null,null));
+  	List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList(); 
+     User usr =User.find.where().eq("username", globalusername).findUnique();
+    return ok(views.html.contact.render(null,events));
   }
   
   public Result register() {

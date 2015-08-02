@@ -202,7 +202,14 @@ String globalusername="guest";
   }
   
   public Result contact() {
-    return ok(views.html.contact.render(null,null));
+  	List<Event> events=Ebean.find(Event.class)
+     .select("description, day_start, day_start, hours")
+     .fetch("location")
+     //.where()
+     //.eq("id","events.locationid")
+     .findList(); 
+     User usr =User.find.where().eq("username", globalusername).findUnique();
+    return ok(views.html.contact.render(usr,events));
   }
   
   public Result register() {
