@@ -34,7 +34,7 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
       ['Pili Bithleem', 35.3345449,25.1277602, 3],
       ['Pili Bitouri', 35.334279,25.1347117, 2],
       ['Plateia Eleutherias', 35.3380048,25.1359151, 1]
-    ];*/
+    ];
  
  var locations = [
       ['Androgeo', 35.339409,25.1343932],
@@ -43,6 +43,27 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
       ['Pili Bitouri', 35.334279,25.1347117],
       ['Plateia Eleutherias', 35.3380048,25.1359151]
     ];
+*/
+
+
+
+var locations = [
+      @for((myevent, index) <- events.zipWithIndex) {
+    		
+			@if(index <= events.size-2){
+       		 {
+           	 	['@event.location.name', @event.location.latitude ,@event.location.longitude],
+       		 },
+       	} else {
+       			{
+           	 	['@event.location.name', @event.location.latitude ,@event.location.longitude],
+       		 }
+       	
+       	}
+        
+        }
+    ];
+    
     var myLatlng = new google.maps.LatLng(35.3220164, 25.1350708);
 	 var element = document.getElementById("map");
  
@@ -53,6 +74,7 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
  	  mapTypeControl: true,
  	  streetViewControl: true
 	 });
+	 
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
     var markers = new Array();
@@ -81,10 +103,6 @@ google.maps.event.addListener(marker, 'click', (function(marker) {
       map.fitBounds(bounds);
     }
     AutoCenter();
-
-
-
-
 
 
 
