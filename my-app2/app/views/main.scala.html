@@ -34,16 +34,7 @@ $(document).ready(function() {
         alert('a day has been clicked!');
     }*/
     
-   eventClick: function(calEvent, jsEvent, view) {
-
-        alert('Event: ' + calEvent.title);
-        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-        alert('View: ' + view.name);
-
-        // change the border color just for fun
-        $(this).css('border-color', 'red');
-
-    }
+   
  		/* */
  		events: [
 
@@ -62,7 +53,16 @@ $(document).ready(function() {
    		 		 }
 			}
         					
- 		],
+ 		],eventClick: function(calEvent, jsEvent, view) {
+
+        alert('Event: ' + calEvent.title);
+        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        alert('View: ' + view.name);
+
+        // change the border color just for fun
+        $(this).css('border-color', 'red');
+
+    },
     
     header:{
     left:   'title',
