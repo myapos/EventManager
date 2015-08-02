@@ -35,18 +35,32 @@ $(document).ready(function() {
     }*/
     
     
- 		/* 
+ 		/* */
  		events: [
         {
-        		@for(event <- events){
-          	 	title  : @event.description,
-             	start  : @event.day_start,
-           	 	end    : @event.day_end
-         	}   
+        
+        	@for((myevents, index) <- events.zipWithIndex) {
+   		 {Item @index is @myevents}
+			}
+        		/*
+        		@for(myevent <- events){
+        		
+        			{
+          	 	title  : @myevent.description,
+             	start  : @myevent.day_start,
+           	 	end    : @myevent.day_end
+           	 	}
+         	}   */
         }						
- 		*/   
+ 		],
+    
+    header:{
+    left:   'title',
+    center: '',
+    right:  'today month agendaWeek agendaDay prev,next'
+    }   
     			
-    /**/
+    /*
     events: [
         {
             title  : 'event1',
@@ -69,7 +83,7 @@ $(document).ready(function() {
     left:   'title',
     center: '',
     right:  'today month agendaWeek agendaDay prev,next'
-    }
+    }*/
     /**/
     });
   
