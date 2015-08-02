@@ -47,6 +47,7 @@
 			   </div>
 			</div>
 </div>
+<!--
 <div class="row">  	  
         <div class="col-xs-12" id="search-form">
 				<div class="input-group">
@@ -54,9 +55,9 @@
       			<span class="input-group-btn">
        			 <button class="btn btn-default" type="button">Go!</button>
       			</span>
-    			</div><!-- /input-group -->
+    			</div>
 			</div>
-</div>
+</div> -->
 <div class="row">  	  
         <div class="col-xs-12">			
 				<h3>Event Map</h3>
@@ -65,45 +66,45 @@
 				<script type="text/javascript" >
 				$(document).ready(function() {
 
-//alert("Helo from external jquery script");
-var locations = [
-      @for((myevent, index) <- events.zipWithIndex) {
+				//alert("Helo from external jquery script");
+			var locations = [
+     			 @for((myevent, index) <- events.zipWithIndex) {
     		
-			@if(index <= events.size-2){
+						@if(index <= events.size-2){
        		 
-           	 	['@myevent.location.name @myevent.description', @myevent.location.latitude ,@myevent.location.longitude],
+         				  	 	['@myevent.location.name @myevent.description', @myevent.location.latitude ,@myevent.location.longitude],
        		
-       	} else {
-           	 	['@myevent.location.name @myevent.description', @myevent.location.latitude ,@myevent.location.longitude]	
-       	}
-        
-        }
-    ];   
+       					} else {
+           	 					['@myevent.location.name @myevent.description', @myevent.location.latitude ,@myevent.location.longitude]	
+       					}
+        	
+        					}
+   				 ];   
   
-    var myLatlng = new google.maps.LatLng(35.3220164, 25.1350708);
-	 var element = document.getElementById("map");
+    			var myLatlng = new google.maps.LatLng(35.3220164, 25.1350708);
+	 			var element = document.getElementById("map");
  
-	var map = new google.maps.Map(element, {
- 	  center: myLatlng,
- 	  zoom: 13,
- 	  mapTypeId: "OSM",
- 	  mapTypeControl: true,
- 	  streetViewControl: true
-	 });
+				var map = new google.maps.Map(element, {
+ 	 			 center: myLatlng,
+ 	 			 zoom: 13,
+ 	 			 mapTypeId: "OSM",
+ 	 			 mapTypeControl: true,
+ 	 			 streetViewControl: true
+	 			});
 	 
-    var infowindow = new google.maps.InfoWindow();
-    var marker, i;
-    var markers = new Array();
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-      markers.push(marker);
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
+    			var infowindow = new google.maps.InfoWindow();
+    			var marker, i;
+   			var markers = new Array();
+    			for (i = 0; i < locations.length; i++) {  
+     			marker = new google.maps.Marker({
+        		position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        		map: map
+     			 });
+     			markers.push(marker);
+      		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+       		return function() {
+       	   infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
         }
       })(marker, i));
     }

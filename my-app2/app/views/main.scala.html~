@@ -13,12 +13,13 @@
   <link rel='stylesheet' href="@routes.Assets.at("stylesheets/ol.css")"/> 
  
     
+    
 
   
   <!-- bring in the google maps library  -->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-  <script src="@routes.Assets.at("javascripts/moment.min.js")"></script>
+  <script src="@routes.Assets.at("javascripts/ol.js")"></script>	
   <script src="@routes.Assets.at("javascripts/moment.min.js")"></script>
   <script src="@routes.Assets.at("javascripts/fullcalendar.js")"></script>
   <script src="@routes.Assets.at("javascripts/jquery.crotator.js")"></script>
@@ -131,7 +132,7 @@ $("#vertical-ticker").totemticker({
 			    </div>
 			    <div>
 			      <ul class="nav navbar-nav">	
-						<li><a href="./services" id="link5">Services</a></li> 
+						<!--<li><a href="./services" id="link5">Services</a></li>--> 
 						<li><a href="./contact" id="link6">Contact Us</a></li> 
 						<li><a href="./register" id="link7">Register</a></li> 
 						<li><a href="./links" id="link8">Links</a></li> 
