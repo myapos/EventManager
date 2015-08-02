@@ -46,23 +46,14 @@ $(document).ready(function() {
              	start  : @myevent.day_start,
            	 	end    : @myevent.day_end
    		 		},
-   		 } else(index ==events.size-1)
-   		 {		{
-   		      title  : @myevent.description,
-             	start  : @myevent.day_start,
-           	 	end    : @myevent.day_end
-           	 	}
+   		 } else{		
+   		 			{
+   		      		title  : @myevent.description,
+             			start  : @myevent.day_start,
+           	 			end    : @myevent.day_end
+           	 		}
    		 }
 			}
-        		/*
-        		@for(myevent <- events){
-        		
-        			{
-          	 	title  : @myevent.description,
-             	start  : @myevent.day_start,
-           	 	end    : @myevent.day_end
-           	 	}
-         	}   */
         }						
  		],
     
