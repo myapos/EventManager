@@ -45,8 +45,7 @@ $(document).ready(function() {
    		      title  : @myevent.description,
              	start  : @myevent.day_start,
            	 	end    : @myevent.day_end
-   		 		},
-   		 } else{		
+   		 		},} else{		
    		 			{
    		      		title  : @myevent.description,
              			start  : @myevent.day_start,
