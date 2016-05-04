@@ -24,4 +24,4 @@ This is a project for the purposes of code school 3 that took place in Computer 
 
 Apostolakis Myron - Koutsogiannaki Maria
 
-You can visit our application in the following url http://147.52.17.225:9001/
+You can visit our application in the following url http://eventmanager.oncrete.gr/
