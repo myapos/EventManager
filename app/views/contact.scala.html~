@@ -1,6 +1,0 @@
-@(form: Form[Application.Login],events: List[Event])
-@main(title = "Contact Page", user,events) {
-
-<h1>Home page</h1>
-<p>Hello from Contact Page</p>
-}
