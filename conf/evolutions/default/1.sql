@@ -3,7 +3,7 @@
 
 # --- !Ups
 
-create table event (
+create table IF NOT EXISTS event (
   id                        integer auto_increment not null,
   description               varchar(255),
   day_start                 varchar(255),
@@ -13,7 +13,7 @@ create table event (
   constraint pk_event primary key (id))
 ;
 
-create table location (
+create table IF NOT EXISTS location (
   id                        integer auto_increment not null,
   name                      varchar(255),
   address                   varchar(255),
@@ -22,7 +22,7 @@ create table location (
   constraint pk_location primary key (id))
 ;
 
-create table user (
+create table IF NOT EXISTS user (
   id                        varchar(255) not null,
   name                      varchar(255),
   username                  varchar(255),

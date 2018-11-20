@@ -5,3 +5,11 @@ id
 help
 projects
 exit
+playUpdateSecret
+id
+ids
+run
+dist
+universal:packageZipTarball
+dist
+testProd
